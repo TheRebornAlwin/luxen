@@ -1,26 +1,231 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #ffffff;
+  --space-black: #0a0a0f;
+  --midnight-navy: #0d1b2a;
+  --gold: #c9a84c;
+  --electric-violet: #7b2fff;
+  --white: #ffffff;
+  --transparent: transparent;
+  --black: #0a0a0f;
+
+  /* Aurora gradient colors */
+  --blue-500: #3b82f6;
+  --indigo-300: #a5b4fc;
+  --blue-300: #93c5fd;
+  --violet-200: #ddd6fe;
+  --blue-400: #60a5fa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-space-black: #0a0a0f;
+  --color-midnight-navy: #0d1b2a;
+  --color-gold: #c9a84c;
+  --color-electric-violet: #7b2fff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-aurora: aurora 60s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 4s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-star-drift: star-drift 120s linear infinite;
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-logo-reveal: logo-reveal 2s ease-out forwards;
+  --animate-spin-slow: spin 20s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
   }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes star-drift {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-100%) translateX(50px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(10px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* Global styles */
+* {
+  cursor: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1a1a2e;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a84c40;
+}
+
+/* Selection */
+::selection {
+  background: #c9a84c40;
+  color: #ffffff;
+}
+
+/* Aurora component styles */
+.aurora-bg {
+  --white-gradient: repeating-linear-gradient(
+    100deg,
+    var(--black) 0%,
+    var(--black) 7%,
+    var(--transparent) 10%,
+    var(--transparent) 12%,
+    var(--black) 16%
+  );
+  --aurora-gradient: repeating-linear-gradient(
+    100deg,
+    #7b2fff 10%,
+    #4c1d95 15%,
+    #1e1b4b 20%,
+    #c9a84c40 25%,
+    #7b2fff 30%
+  );
+  background-image: var(--white-gradient), var(--aurora-gradient);
+  background-size: 300% 200%;
+  background-position: 50% 50%;
+  filter: blur(10px);
+}
+
+.aurora-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--white-gradient), var(--aurora-gradient);
+  background-size: 200% 100%;
+  animation: aurora 60s linear infinite;
+  background-attachment: fixed;
+  mix-blend-mode: difference;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(13, 27, 42, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(123, 47, 255, 0.05);
+}
+
+/* God ray effect */
+.god-ray {
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(201, 168, 76, 0.15) 0%,
+    rgba(123, 47, 255, 0.08) 30%,
+    transparent 70%
+  );
+}
+
+/* Section gradient transitions */
+.section-gradient-navy {
+  background: linear-gradient(180deg, #0a0a0f 0%, #0d1b2a 50%, #0a0a0f 100%);
+}
+
+.section-gradient-violet {
+  background: linear-gradient(
+    180deg,
+    #0a0a0f 0%,
+    #0d0a1a 50%,
+    #0a0a0f 100%
+  );
+}
+
+/* Touch device cursor fix */
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
 }
