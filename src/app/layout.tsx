@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   description:
     "Transform any room into a breathtaking galaxy experience with Luxen premium night lights and galaxy projectors.",
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
   },
 };
 
