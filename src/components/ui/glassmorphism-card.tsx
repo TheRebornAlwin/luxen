@@ -17,7 +17,7 @@ export function GlassmorphismCard({
     <div
       className={cn(
         "relative rounded-2xl overflow-hidden",
-        "bg-white/[0.03] backdrop-blur-xl",
+        "bg-white/[0.03] backdrop-blur-sm",
         "border border-white/[0.06]",
         "shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]",
         "transition-all duration-500 hover:border-white/[0.12]",

@@ -121,7 +121,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -154,49 +155,15 @@ body {
   color: #ffffff;
 }
 
-/* Aurora component styles */
-.aurora-bg {
-  --white-gradient: repeating-linear-gradient(
-    100deg,
-    var(--black) 0%,
-    var(--black) 7%,
-    var(--transparent) 10%,
-    var(--transparent) 12%,
-    var(--black) 16%
-  );
-  --aurora-gradient: repeating-linear-gradient(
-    100deg,
-    #7b2fff 10%,
-    #4c1d95 15%,
-    #1e1b4b 20%,
-    #c9a84c40 25%,
-    #7b2fff 30%
-  );
-  background-image: var(--white-gradient), var(--aurora-gradient);
-  background-size: 300% 200%;
-  background-position: 50% 50%;
-  filter: blur(10px);
-}
-
-.aurora-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: var(--white-gradient), var(--aurora-gradient);
-  background-size: 200% 100%;
-  animation: aurora 60s linear infinite;
-  background-attachment: fixed;
-  mix-blend-mode: difference;
-}
+/* Aurora component styles — simplified for performance */
 
 /* Glassmorphism utility */
 .glass {
-  background: rgba(13, 27, 42, 0.4);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(13, 27, 42, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05),
-    0 0 20px rgba(123, 47, 255, 0.05);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 /* God ray effect */

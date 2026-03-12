@@ -4,12 +4,20 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function LoadingScreen() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    if (typeof window !== "undefined") {
+      return !sessionStorage.getItem("luxen-loaded");
+    }
+    return true;
+  });
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2800);
-    // Prevent scroll during loading
-    if (loading) document.body.style.overflow = "hidden";
+    if (!loading) return;
+    const timer = setTimeout(() => {
+      setLoading(false);
+      sessionStorage.setItem("luxen-loaded", "1");
+    }, 2800);
+    document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
       clearTimeout(timer);

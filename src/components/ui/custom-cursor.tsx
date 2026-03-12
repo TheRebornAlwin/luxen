@@ -1,42 +1,57 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useSpring } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export function CustomCursor() {
+  const dotRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-
-  const cursorX = useSpring(0, { damping: 25, stiffness: 250 });
-  const cursorY = useSpring(0, { damping: 25, stiffness: 250 });
-
-  const trailX = useSpring(0, { damping: 20, stiffness: 150 });
-  const trailY = useSpring(0, { damping: 20, stiffness: 150 });
+  const mouse = useRef({ x: 0, y: 0 });
+  const dot = useRef({ x: 0, y: 0 });
+  const glow = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     // Don't show on touch devices
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
+    let raf: number;
+
     const move = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-      trailX.set(e.clientX);
-      trailY.set(e.clientY);
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
       if (!visible) setVisible(true);
     };
 
-    const leave = () => setVisible(false);
-    const enter = () => setVisible(true);
+    // Use raw RAF for cursor — no framer motion overhead
+    const tick = () => {
+      // Dot follows tightly
+      dot.current.x += (mouse.current.x - dot.current.x) * 0.35;
+      dot.current.y += (mouse.current.y - dot.current.y) * 0.35;
 
-    window.addEventListener("mousemove", move);
-    document.addEventListener("mouseleave", leave);
-    document.addEventListener("mouseenter", enter);
+      // Glow trails more
+      glow.current.x += (mouse.current.x - glow.current.x) * 0.15;
+      glow.current.y += (mouse.current.y - glow.current.y) * 0.15;
+
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${dot.current.x - 6}px, ${dot.current.y - 6}px, 0)`;
+      }
+      if (glowRef.current) {
+        glowRef.current.style.transform = `translate3d(${glow.current.x - 16}px, ${glow.current.y - 16}px, 0)`;
+      }
+
+      raf = requestAnimationFrame(tick);
+    };
+
+    window.addEventListener("mousemove", move, { passive: true });
+    document.addEventListener("mouseleave", () => setVisible(false));
+    document.addEventListener("mouseenter", () => setVisible(true));
+    raf = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", move);
-      document.removeEventListener("mouseleave", leave);
-      document.removeEventListener("mouseenter", enter);
+      cancelAnimationFrame(raf);
     };
-  }, [cursorX, cursorY, trailX, trailY, visible]);
+  }, [visible]);
 
   if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
     return null;
@@ -44,33 +59,33 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* Main cursor dot */}
-      <motion.div
+      <div
+        ref={dotRef}
         className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference"
         style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: "-50%",
-          translateY: "-50%",
+          width: 12,
+          height: 12,
+          borderRadius: "50%",
+          background: "#c9a84c",
           opacity: visible ? 1 : 0,
+          willChange: "transform",
+          transition: "opacity 0.2s",
         }}
-      >
-        <div className="h-3 w-3 rounded-full bg-gold" />
-      </motion.div>
-
-      {/* Trail glow */}
-      <motion.div
+      />
+      <div
+        ref={glowRef}
         className="pointer-events-none fixed top-0 left-0 z-[9998]"
         style={{
-          x: trailX,
-          y: trailY,
-          translateX: "-50%",
-          translateY: "-50%",
+          width: 32,
+          height: 32,
+          borderRadius: "50%",
+          background: "rgba(123, 47, 255, 0.35)",
+          filter: "blur(8px)",
           opacity: visible ? 0.4 : 0,
+          willChange: "transform",
+          transition: "opacity 0.2s",
         }}
-      >
-        <div className="h-8 w-8 rounded-full bg-electric-violet blur-md" />
-      </motion.div>
+      />
     </>
   );
 }

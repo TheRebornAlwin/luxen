@@ -14,72 +14,44 @@ export function HeroSection() {
     offset: ["start start", "end start"],
   });
 
-  const productY = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const productY = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 60]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.9]);
 
   return (
     <div ref={ref}>
-      <AuroraBackground className="relative overflow-hidden">
-        {/* Layered god rays */}
+      <AuroraBackground className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
+        {/* God ray — simple CSS, no motion animation */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <motion.div
-            className="god-ray w-[700px] h-[700px] md:w-[1000px] md:h-[1000px]"
-            animate={{
-              opacity: [0.3, 0.6, 0.3],
-              scale: [1, 1.08, 1],
-            }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
-
-        {/* Floating glow orbs */}
-        <div className="absolute top-1/4 left-1/4 pointer-events-none">
-          <motion.div
-            className="w-64 h-64 rounded-full bg-electric-violet/8 blur-[120px]"
-            animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
-        <div className="absolute bottom-1/4 right-1/4 pointer-events-none">
-          <motion.div
-            className="w-48 h-48 rounded-full bg-gold/5 blur-[100px]"
-            animate={{ x: [0, -20, 0], y: [0, 30, 0] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          />
+          <div className="god-ray w-[600px] h-[600px] md:w-[900px] md:h-[900px] animate-glow-pulse" />
         </div>
 
         <motion.div
-          style={{ opacity, scale }}
+          style={{ opacity }}
           className="relative z-10 flex flex-col items-center justify-center px-6 text-center"
         >
           {/* Floating Product with parallax */}
           <motion.div style={{ y: productY }}>
-            <FloatingElement amplitude={12} duration={5}>
+            <FloatingElement amplitude={10} duration={6}>
               <motion.div
-                initial={{ opacity: 0, scale: 0.6, y: 40 }}
+                initial={{ opacity: 0, scale: 0.7, y: 30 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 1.5, delay: 3, ease: [0.25, 0.4, 0.25, 1] }}
-                className="relative mb-6"
+                transition={{ duration: 1.2, delay: 3, ease: [0.25, 0.4, 0.25, 1] }}
+                className="relative mb-8"
               >
-                {/* Outer glow rings */}
-                <div className="absolute inset-0 -m-16 rounded-full border border-gold/[0.06] animate-glow-pulse" />
-                <div className="absolute inset-0 -m-10 rounded-full border border-electric-violet/[0.08] animate-glow-pulse" style={{ animationDelay: "0.5s" }} />
-
                 {/* Product glow */}
-                <div className="absolute inset-0 -m-8 rounded-full bg-gradient-to-b from-gold/15 via-electric-violet/10 to-transparent blur-3xl animate-glow-pulse" />
+                <div className="absolute inset-0 -m-6 rounded-full bg-gradient-to-b from-gold/10 via-electric-violet/8 to-transparent blur-2xl animate-glow-pulse" />
 
                 {/* Product container */}
-                <div className="relative w-52 h-52 md:w-72 md:h-72 rounded-full bg-gradient-to-b from-midnight-navy/80 to-space-black/80 border border-white/[0.08] flex items-center justify-center shadow-[0_0_80px_rgba(123,47,255,0.15),0_0_160px_rgba(201,168,76,0.06)]">
+                <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full bg-gradient-to-b from-midnight-navy/80 to-space-black/80 border border-white/[0.08] flex items-center justify-center shadow-[0_0_60px_rgba(123,47,255,0.12),0_0_120px_rgba(201,168,76,0.05)]">
                   <div className="text-center">
-                    <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.4" className="mx-auto text-gold/50">
+                    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.4" className="mx-auto text-gold/50">
                       <circle cx="12" cy="12" r="10" />
                       <path d="M12 2a7 7 0 017 7M12 2a7 7 0 00-7 7" />
                       <circle cx="12" cy="12" r="3" />
                       <path d="M12 9v-2M12 17v-2M15 12h2M7 12h-2" />
                     </svg>
-                    <span className="text-[9px] tracking-[0.3em] uppercase text-white/25 mt-3 block">
+                    <span className="text-[9px] tracking-[0.3em] uppercase text-white/25 mt-2 block">
                       Image Soon
                     </span>
                   </div>
@@ -97,7 +69,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 3.2 }}
               className="mb-6"
             >
-              <span className="inline-block text-[10px] tracking-[0.4em] uppercase text-gold/70 border border-gold/20 rounded-full px-5 py-1.5 backdrop-blur-sm">
+              <span className="inline-block text-[10px] tracking-[0.4em] uppercase text-gold/70 border border-gold/20 rounded-full px-5 py-1.5">
                 Premium Galaxy Projectors
               </span>
             </motion.div>
@@ -107,10 +79,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 3.4, ease: [0.25, 0.4, 0.25, 1] }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.02em] max-w-5xl leading-[1.05]"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-[-0.02em] max-w-4xl leading-[1.1]"
             >
               Light Years Ahead
-              <span className="block">
+              <span className="block mt-1">
                 of{" "}
                 <TextGradient variant="gold">Ordinary</TextGradient>
               </span>
@@ -121,11 +93,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 3.8, ease: "easeOut" }}
-              className="mt-6 max-w-xl text-base md:text-lg text-white/40 font-light leading-relaxed"
+              className="mt-6 max-w-lg text-base md:text-lg text-white/40 font-light leading-relaxed"
             >
               Transform any room into a breathtaking galaxy experience.
-              <br className="hidden md:block" />
-              {" "}Premium projectors designed for those who see beyond the ceiling.
+              Premium projectors designed for those who see beyond the ceiling.
             </motion.p>
 
             {/* CTA Group */}
@@ -148,7 +119,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 4.6, duration: 0.8 }}
-              className="mt-12 flex items-center gap-3"
+              className="mt-10 flex items-center gap-3"
             >
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
@@ -168,10 +139,10 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 5.2, duration: 1 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            className="mt-16"
           >
             <motion.div
-              animate={{ y: [0, 8, 0] }}
+              animate={{ y: [0, 6, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="flex flex-col items-center gap-2"
             >
