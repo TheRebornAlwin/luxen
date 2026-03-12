@@ -42,7 +42,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="relative z-10">
             <img
-              src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78sUfnZyGG71I9kXyqfZrS2VxhbQNaiEsnWL85"
+              src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78KDHACKorgNdXr3qCb9EGYnushPvIa0FiwSMy"
               alt="Luxen"
               width={40}
               height={40}
