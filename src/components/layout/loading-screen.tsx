@@ -4,25 +4,25 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function LoadingScreen() {
-  const [loading, setLoading] = useState(() => {
-    if (typeof window !== "undefined") {
-      return !sessionStorage.getItem("luxen-loaded");
-    }
-    return true;
-  });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!loading) return;
+    // Skip loading screen on repeat visits
+    if (sessionStorage.getItem("luxen-loaded")) {
+      setLoading(false);
+      return;
+    }
+    document.body.style.overflow = "hidden";
     const timer = setTimeout(() => {
       setLoading(false);
       sessionStorage.setItem("luxen-loaded", "1");
+      document.body.style.overflow = "";
     }, 1800);
-    document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
       clearTimeout(timer);
     };
-  }, [loading]);
+  }, []);
 
   return (
     <AnimatePresence>

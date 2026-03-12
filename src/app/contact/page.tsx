@@ -93,10 +93,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-medium text-sm mb-1">Email</h3>
                     <a
-                      href="mailto:support@luxen.com"
+                      href="mailto:shoptheluxen@gmail.com"
                       className="text-sm text-gold hover:text-gold/80 transition-colors"
                     >
-                      support@luxen.com
+                      shoptheluxen@gmail.com
                     </a>
                     <p className="text-xs text-white/30 mt-1">
                       We respond within 24 hours
@@ -121,7 +121,7 @@ export default function ContactPage() {
                       Monday - Friday
                     </p>
                     <p className="text-xs text-white/30 mt-1">
-                      9:00 AM - 6:00 PM (HKT)
+                      9:00 AM - 6:00 PM (EST)
                     </p>
                   </div>
                 </div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-sm mb-1">Shipping From</h3>
-                    <p className="text-sm text-white/50">Hong Kong</p>
+                    <p className="text-sm text-white/50">the USA</p>
                     <p className="text-xs text-white/30 mt-1">
                       Worldwide delivery available
                     </p>

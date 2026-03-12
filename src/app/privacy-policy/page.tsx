@@ -68,8 +68,8 @@ export default function PrivacyPolicyPage() {
             </h3>
             <p>
               If you have questions about this privacy policy, contact us at{" "}
-              <a href="mailto:support@luxen.com" className="text-gold hover:text-gold/80">
-                support@luxen.com
+              <a href="mailto:shoptheluxen@gmail.com" className="text-gold hover:text-gold/80">
+                shoptheluxen@gmail.com
               </a>
               .
             </p>

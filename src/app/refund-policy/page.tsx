@@ -30,8 +30,8 @@ export default function RefundPolicyPage() {
               You have 30 days from the date of delivery to request a return.
               Items must be in their original packaging and in unused condition.
               To initiate a return, please contact us at{" "}
-              <a href="mailto:support@luxen.com" className="text-gold hover:text-gold/80">
-                support@luxen.com
+              <a href="mailto:shoptheluxen@gmail.com" className="text-gold hover:text-gold/80">
+                shoptheluxen@gmail.com
               </a>{" "}
               with your order number and reason for return.
             </p>
@@ -68,8 +68,8 @@ export default function RefundPolicyPage() {
             </h3>
             <p>
               For any questions about our refund policy, please email us at{" "}
-              <a href="mailto:support@luxen.com" className="text-gold hover:text-gold/80">
-                support@luxen.com
+              <a href="mailto:shoptheluxen@gmail.com" className="text-gold hover:text-gold/80">
+                shoptheluxen@gmail.com
               </a>
               .
             </p>

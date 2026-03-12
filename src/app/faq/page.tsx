@@ -91,7 +91,7 @@ export default function FAQPage() {
               Our team is here to help.
             </p>
             <a
-              href="mailto:support@luxen.com"
+              href="mailto:shoptheluxen@gmail.com"
               className="inline-block rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-space-black hover:bg-gold/90 transition-colors"
             >
               Contact Support

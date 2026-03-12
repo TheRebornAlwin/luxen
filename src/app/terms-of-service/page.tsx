@@ -67,8 +67,8 @@ export default function TermsOfServicePage() {
             </h3>
             <p>
               For questions regarding these terms, contact us at{" "}
-              <a href="mailto:support@luxen.com" className="text-gold hover:text-gold/80">
-                support@luxen.com
+              <a href="mailto:shoptheluxen@gmail.com" className="text-gold hover:text-gold/80">
+                shoptheluxen@gmail.com
               </a>
               .
             </p>

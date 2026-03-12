@@ -75,7 +75,7 @@ export default function TrackOrderPage() {
                   Can&apos;t find your tracking number? Check your order
                   confirmation email or{" "}
                   <a
-                    href="mailto:support@luxen.com"
+                    href="mailto:shoptheluxen@gmail.com"
                     className="text-gold hover:text-gold/80"
                   >
                     contact support

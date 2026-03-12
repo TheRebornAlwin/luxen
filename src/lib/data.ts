@@ -158,7 +158,7 @@ export const faqData = [
   {
     question: "How can I contact Luxen?",
     answer:
-      "You can email us at support@luxen.com where our customer service team will be happy to help you with whatever you need!",
+      "You can email us at shoptheluxen@gmail.com where our customer service team will be happy to help you with whatever you need!",
   },
   {
     question: "Do you ship worldwide?",
@@ -166,7 +166,7 @@ export const faqData = [
   },
   {
     question: "Where do you ship from?",
-    answer: "We ship from Hong Kong.",
+    answer: "We ship from the USA.",
   },
   {
     question: "Can I change or cancel my order?",
@@ -199,7 +199,7 @@ export const faqData = [
   },
   {
     question: "How do I return an item?",
-    answer: "Please contact us at support@luxen.com to initiate a return.",
+    answer: "Please contact us at shoptheluxen@gmail.com to initiate a return.",
   },
   {
     question: "What if the item(s) I received are defective, incorrect, or damaged?",
