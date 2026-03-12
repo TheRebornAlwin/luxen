@@ -2,7 +2,6 @@
 
 import { CartProvider } from "@/contexts/cart-context";
 import { ParticleField } from "@/components/ui/particle-field";
-import { CustomCursor } from "@/components/ui/custom-cursor";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { LoadingScreen } from "@/components/layout/loading-screen";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
@@ -14,7 +13,6 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
     <CartProvider>
       <LoadingScreen />
-      <CustomCursor />
       <ScrollProgress />
       <ParticleField />
 

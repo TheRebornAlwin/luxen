@@ -116,9 +116,6 @@
 }
 
 /* Global styles */
-* {
-  cursor: none !important;
-}
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -190,9 +187,3 @@ body {
   );
 }
 
-/* Touch device cursor fix */
-@media (pointer: coarse) {
-  * {
-    cursor: auto !important;
-  }
-}
