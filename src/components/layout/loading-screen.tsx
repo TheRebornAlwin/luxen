@@ -16,7 +16,7 @@ export function LoadingScreen() {
     const timer = setTimeout(() => {
       setLoading(false);
       sessionStorage.setItem("luxen-loaded", "1");
-    }, 2800);
+    }, 1800);
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = "";
@@ -70,7 +70,9 @@ export function LoadingScreen() {
             <motion.img
               src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78sUfnZyGG71I9kXyqfZrS2VxhbQNaiEsnWL85"
               alt="Luxen"
-              className="h-14 md:h-18"
+              width={72}
+              height={72}
+              className="h-14 md:h-18 w-auto"
               initial={{ opacity: 0, scale: 0.7, filter: "blur(12px)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.4, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}

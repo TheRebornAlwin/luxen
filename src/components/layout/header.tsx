@@ -29,14 +29,14 @@ export function Header() {
     <>
       <motion.header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-[30px] left-0 right-0 z-50 transition-all duration-500",
           scrolled
-            ? "bg-space-black/80 backdrop-blur-xl border-b border-white/[0.06]"
+            ? "bg-space-black/80 backdrop-blur-sm border-b border-white/[0.06]"
             : "bg-transparent"
         )}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6, delay: 2.8, ease: "easeOut" }}
+        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           {/* Logo */}
@@ -44,7 +44,9 @@ export function Header() {
             <img
               src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78sUfnZyGG71I9kXyqfZrS2VxhbQNaiEsnWL85"
               alt="Luxen"
-              className="h-8 md:h-10 transition-opacity hover:opacity-80"
+              width={40}
+              height={40}
+              className="h-8 md:h-10 w-auto transition-opacity hover:opacity-80"
             />
           </Link>
 

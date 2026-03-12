@@ -23,7 +23,7 @@ export function ParticleField() {
     let animationId: number;
     let stars: Star[] = [];
     let lastTime = 0;
-    const FPS = 30; // Cap at 30fps — particles don't need 60
+    const FPS = 20; // Cap at 20fps — subtle twinkle doesn't need more
     const frameInterval = 1000 / FPS;
 
     const resize = () => {
@@ -37,8 +37,7 @@ export function ParticleField() {
     };
 
     const initStars = () => {
-      // Much fewer stars — max 150
-      const count = Math.min(150, Math.floor((window.innerWidth * window.innerHeight) / 15000));
+      const count = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 20000));
       stars = Array.from({ length: count }, () => ({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
