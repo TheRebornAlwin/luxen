@@ -1,5 +1,4 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import React, { type ReactNode } from "react";
 
@@ -17,31 +16,32 @@ export const AuroraBackground = ({
   return (
     <div
       className={cn(
-        "relative flex flex-col min-h-screen items-center justify-center bg-space-black",
+        "relative flex flex-col min-h-screen items-center justify-center bg-space-black transition-bg",
         className
       )}
       {...props}
     >
-      {/* Simplified aurora — pure CSS, no heavy blend modes */}
       <div className="absolute inset-0 overflow-hidden">
         <div
           className={cn(
-            "absolute -inset-[10px] opacity-25 will-change-transform",
+            `
+            [--dark-gradient:repeating-linear-gradient(100deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)]
+            [--aurora:repeating-linear-gradient(100deg,var(--blue-500)_10%,var(--indigo-300)_15%,var(--blue-300)_20%,var(--violet-200)_25%,var(--blue-400)_30%)]
+            [background-image:var(--dark-gradient),var(--aurora)]
+            [background-size:300%,_200%]
+            [background-position:50%_50%,50%_50%]
+            filter blur-[10px] invert-0
+            after:content-[""] after:absolute after:inset-0
+            after:[background-image:var(--dark-gradient),var(--aurora)]
+            after:[background-size:200%,_100%]
+            after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
+            pointer-events-none
+            absolute -inset-[10px] opacity-50 will-change-transform`,
+
             showRadialGradient &&
-              "[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,transparent_70%)]"
+              `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_70%)]`
           )}
-          style={{
-            background: "linear-gradient(135deg, rgba(123,47,255,0.15) 0%, rgba(13,27,42,0.3) 40%, rgba(201,168,76,0.08) 70%, rgba(10,10,15,1) 100%)",
-          }}
-        />
-        {/* Slow moving aurora — single element, GPU composited */}
-        <div
-          className="absolute -inset-[10px] opacity-20 animate-aurora will-change-transform"
-          style={{
-            backgroundImage: "repeating-linear-gradient(100deg, rgba(123,47,255,0.2) 10%, rgba(76,29,149,0.15) 15%, rgba(30,27,75,0.1) 20%, rgba(201,168,76,0.08) 25%, rgba(123,47,255,0.2) 30%)",
-            backgroundSize: "200% 100%",
-          }}
-        />
+        ></div>
       </div>
       <div className="relative z-10 w-full">{children}</div>
     </div>

@@ -11,12 +11,12 @@
   --transparent: transparent;
   --black: #0a0a0f;
 
-  /* Aurora gradient colors */
-  --blue-500: #3b82f6;
-  --indigo-300: #a5b4fc;
-  --blue-300: #93c5fd;
-  --violet-200: #ddd6fe;
-  --blue-400: #60a5fa;
+  /* Aurora gradient colors — Luxen palette */
+  --blue-500: #7b2fff;
+  --indigo-300: #9b6dff;
+  --blue-300: #1a2744;
+  --violet-200: #c9a84c;
+  --blue-400: #4a1d96;
 }
 
 @theme inline {
