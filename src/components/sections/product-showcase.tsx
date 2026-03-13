@@ -32,17 +32,12 @@ export function ProductShowcase() {
               <div className="absolute w-80 h-80 rounded-full bg-electric-violet/10 blur-[100px]" />
 
               <FloatingElement amplitude={10} duration={7}>
-                <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full bg-gradient-to-b from-midnight-navy/60 to-space-black/60 border border-white/[0.06] flex items-center justify-center shadow-[0_0_80px_rgba(123,47,255,0.12)]">
-                  <div className="text-center">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" className="mx-auto text-gold/40">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M12 2a7 7 0 017 7M12 2a7 7 0 00-7 7" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                    <span className="text-[10px] tracking-[0.3em] uppercase text-white/20 mt-4 block">
-                      Product Image
-                    </span>
-                  </div>
+                <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(123,47,255,0.12)]">
+                  <img
+                    src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78RfFHaGqBOZqUkbfnH8DdaLl94tBQWoPJXj5u"
+                    alt="Nebula Astronaut Projector"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </FloatingElement>
             </div>

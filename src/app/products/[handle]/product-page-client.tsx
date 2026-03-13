@@ -3,7 +3,6 @@
 import { useParams } from "next/navigation";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { GlassmorphismCard } from "@/components/ui/glassmorphism-card";
-import { FloatingElement } from "@/components/ui/floating-element";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { SectionDivider } from "@/components/ui/section-divider";
 import { ProductCard } from "@/components/product/product-card";
@@ -15,6 +14,7 @@ export function ProductPageClient() {
   const params = useParams();
   const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(0);
 
   const product = products.find((p) => p.handle === params.handle);
 
@@ -68,29 +68,22 @@ export function ProductPageClient() {
 
         {/* Product Section */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left - Image */}
+          {/* Left - Image Gallery */}
           <ScrollReveal direction="left">
             <div className="sticky top-28">
-              <div className="relative aspect-square rounded-2xl bg-gradient-to-b from-midnight-navy/40 to-space-black/60 border border-white/[0.06] overflow-hidden flex items-center justify-center">
-                {/* Glow effect */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-64 h-64 rounded-full bg-electric-violet/10 blur-[80px]" />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1/2 god-ray" />
-
-                <FloatingElement amplitude={8} duration={6}>
-                  <div className="relative">
-                    <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.3" className="text-gold/30">
-                      <circle cx="12" cy="12" r="10" />
-                      <path d="M12 2a7 7 0 017 7M12 2a7 7 0 00-7 7" />
-                      <circle cx="12" cy="12" r="3" />
-                      <path d="M12 9v-2M12 17v-2M15 12h2M7 12h-2" />
-                    </svg>
-                    <span className="block text-[10px] tracking-[0.2em] uppercase text-white/20 text-center mt-4">
-                      Product Image
-                    </span>
+              {/* Main Image */}
+              <div className="relative aspect-square rounded-2xl bg-gradient-to-b from-midnight-navy/40 to-space-black/60 border border-white/[0.06] overflow-hidden">
+                {product.images.length > 0 ? (
+                  <img
+                    src={product.images[selectedImage]}
+                    alt={`${product.title} - Image ${selectedImage + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-white/20 text-sm">No image</span>
                   </div>
-                </FloatingElement>
+                )}
 
                 {discount > 0 && (
                   <span className="absolute top-4 right-4 text-xs bg-gold/90 text-space-black font-bold px-3 py-1 rounded-full">
@@ -98,6 +91,29 @@ export function ProductPageClient() {
                   </span>
                 )}
               </div>
+
+              {/* Thumbnails */}
+              {product.images.length > 1 && (
+                <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+                  {product.images.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setSelectedImage(i)}
+                      className={`shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                        selectedImage === i
+                          ? "border-gold/70 opacity-100"
+                          : "border-white/[0.06] opacity-50 hover:opacity-80"
+                      }`}
+                    >
+                      <img
+                        src={img}
+                        alt={`${product.title} thumbnail ${i + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           </ScrollReveal>
 

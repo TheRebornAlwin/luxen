@@ -26,19 +26,13 @@ export function HeroSection() {
             {/* Product glow */}
             <div className="absolute inset-0 -m-6 rounded-full bg-gradient-to-b from-gold/10 via-electric-violet/8 to-transparent blur-2xl animate-glow-pulse" />
 
-            {/* Product container */}
-            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full bg-gradient-to-b from-midnight-navy/80 to-space-black/80 border border-white/[0.08] flex items-center justify-center shadow-[0_0_60px_rgba(123,47,255,0.12),0_0_120px_rgba(201,168,76,0.05)]">
-              <div className="text-center">
-                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.4" className="mx-auto text-gold/50">
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 2a7 7 0 017 7M12 2a7 7 0 00-7 7" />
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M12 9v-2M12 17v-2M15 12h2M7 12h-2" />
-                </svg>
-                <span className="text-[9px] tracking-[0.3em] uppercase text-white/25 mt-2 block">
-                  Image Soon
-                </span>
-              </div>
+            {/* Product image */}
+            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden shadow-[0_0_60px_rgba(123,47,255,0.12),0_0_120px_rgba(201,168,76,0.05)]">
+              <img
+                src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa781GpeDUTKvCQiR0lowqFh8TYZmIGNrcOk29y7"
+                alt="Nebula Astronaut Projector"
+                className="w-full h-full object-cover"
+              />
             </div>
           </motion.div>
         </FloatingElement>

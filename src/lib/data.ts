@@ -21,7 +21,14 @@ export const heroProduct: Product = {
     "The Nebula Astronaut Projector fills your ceiling and walls with thousands of stars, swirling nebula clouds, and deep space colors. Just place it on your desk, turn off the lights, and your entire room transforms into a breathtaking galaxy experience. It's not a light, it's a vibe.",
   price: 39.99,
   compareAtPrice: 79.99,
-  images: ["/products/astronaut-projector-1.png"],
+  images: [
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa781GpeDUTKvCQiR0lowqFh8TYZmIGNrcOk29y7",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78RfFHaGqBOZqUkbfnH8DdaLl94tBQWoPJXj5u",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78tsO00owhKYk0gF8IzArB7XqCNp36TWjosGv9",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78p4UTkMPD8q2ok0VEBvKeOdFbu31TiHmAWNIn",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78tTBqG0RwhKYk0gF8IzArB7XqCNp36TWjosGv",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78CWeHr2oFByWQJEx95Gw02YeMRNAuDPlHz8LI",
+  ],
   features: [
     {
       title: "12 Galaxy Colour Modes",
