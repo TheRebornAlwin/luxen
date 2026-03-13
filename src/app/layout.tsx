@@ -12,12 +12,6 @@ export const metadata: Metadata = {
   title: "Luxen | Premium Galaxy Projectors",
   description:
     "Transform any room into a breathtaking galaxy experience with Luxen premium night lights and galaxy projectors.",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", type: "image/png" },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -27,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <link rel="icon" href="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78YGM1RUlW4UeaQDPbh9xSYXTLrRFtJ2ysk0dH" type="image/png" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased bg-[#0a0a0f] text-white`}>
         <ClientLayout>{children}</ClientLayout>
       </body>

@@ -18,35 +18,35 @@ export const heroProduct: Product = {
   title: "Nebula Astronaut Projector",
   tagline: "Your room. Your galaxy.",
   description:
-    "The Nebula Astronaut Projector transforms any room into a breathtaking galaxy experience. Place it on your desk, turn off the lights, and watch as your ceiling and walls come alive with thousands of stars, nebula clouds, and deep space colours. It's not just a light — it's an experience.",
+    "The Nebula Astronaut Projector fills your ceiling and walls with thousands of stars, swirling nebula clouds, and deep space colors. Just place it on your desk, turn off the lights, and your entire room transforms into a breathtaking galaxy experience. It's not a light, it's a vibe.",
   price: 39.99,
   compareAtPrice: 79.99,
   images: ["/products/astronaut-projector-1.png"],
   features: [
     {
-      title: "360° Projection",
-      description:
-        "Fully adjustable projection angle lets you paint any wall or ceiling with stars, putting the entire galaxy at your fingertips.",
-    },
-    {
       title: "12 Galaxy Colour Modes",
       description:
-        "Cycle through 12 stunning colour combinations — from deep ocean nebula to warm sunset cosmos — to match any mood or moment.",
+        "Match the mood to the moment, from calm deep blue to vibrant aurora.",
     },
     {
-      title: "Remote Controlled",
+      title: "360° Adjustable Projection",
       description:
-        "Control brightness, colour mode, rotation speed and timer from the comfort of your bed with the included wireless remote.",
+        "Point the stars exactly where you want them, ceiling, walls, or both.",
     },
     {
-      title: "Whisper Quiet",
+      title: "Whisper-Quiet Motor",
       description:
-        "Ultra-silent motor ensures the only thing filling your room is light — never noise. Perfect for sleep and relaxation.",
+        "Fall asleep under the stars without a sound disturbing you.",
     },
     {
-      title: "Timed Shutdown",
+      title: "Built-In Timer",
       description:
-        "Built-in timer lets you fall asleep under the stars without worrying about turning it off. Set it and drift away.",
+        "Set it and forget it; it shuts off on its own so you sleep worry-free.",
+    },
+    {
+      title: "Remote Control Included",
+      description:
+        "Change colours and brightness from your bed, couch, or anywhere in the room.",
     },
   ],
   specs: [
