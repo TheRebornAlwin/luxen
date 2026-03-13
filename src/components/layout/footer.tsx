@@ -66,9 +66,9 @@ export function Footer() {
             <img
               src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78KDHACKorgNdXr3qCb9EGYnushPvIa0FiwSMy"
               alt="Luxen"
-              width={32}
-              height={32}
-              className="h-8 w-auto mb-4 opacity-70"
+              width={80}
+              height={80}
+              className="h-20 w-auto mb-4 opacity-70"
             />
             <p className="text-xs text-white/30 leading-relaxed">
               Premium galaxy projectors and ambient lighting. Transforming

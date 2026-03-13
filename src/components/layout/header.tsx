@@ -44,9 +44,9 @@ export function Header() {
             <img
               src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78KDHACKorgNdXr3qCb9EGYnushPvIa0FiwSMy"
               alt="Luxen"
-              width={40}
-              height={40}
-              className="h-8 md:h-10 w-auto transition-opacity hover:opacity-80"
+              width={100}
+              height={100}
+              className="h-20 md:h-24 w-auto transition-opacity hover:opacity-80"
             />
           </Link>
 
