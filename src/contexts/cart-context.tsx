@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 
 export interface CartItem {
   id: string;
@@ -26,7 +26,24 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [hydrated, setHydrated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem("luxen-cart");
+    if (saved) {
+      try { setItems(JSON.parse(saved)); } catch { /* ignore */ }
+    }
+    setHydrated(true);
+  }, []);
+
+  // Save cart to localStorage on change (after hydration)
+  useEffect(() => {
+    if (hydrated) {
+      localStorage.setItem("luxen-cart", JSON.stringify(items));
+    }
+  }, [items, hydrated]);
 
   const addItem = useCallback((item: Omit<CartItem, "quantity">) => {
     setItems((prev) => {

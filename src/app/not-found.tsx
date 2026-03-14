@@ -5,7 +5,7 @@ export default function NotFound() {
     <main className="min-h-screen bg-space-black flex items-center justify-center px-6">
       <div className="text-center max-w-md">
         {/* Big 404 */}
-        <h1 className="text-8xl md:text-9xl font-bold tracking-tight text-white/[0.04] select-none">
+        <h1 className="text-8xl md:text-9xl font-bold tracking-tight text-white/10 select-none">
           404
         </h1>
 
