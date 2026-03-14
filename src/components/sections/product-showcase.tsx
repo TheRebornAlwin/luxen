@@ -34,7 +34,7 @@ export function ProductShowcase() {
               <FloatingElement amplitude={10} duration={7}>
                 <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(123,47,255,0.12)]">
                   <img
-                    src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78RfFHaGqBOZqUkbfnH8DdaLl94tBQWoPJXj5u"
+                    src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78WZ0XA8n2lEyVhDXz2vU5jxeOc1u0FrmnwZf4"
                     alt="Nebula Astronaut Projector"
                     className="w-full h-full object-cover"
                   />

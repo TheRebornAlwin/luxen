@@ -22,12 +22,12 @@ export const heroProduct: Product = {
   price: 39.99,
   compareAtPrice: 79.99,
   images: [
-    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa781GpeDUTKvCQiR0lowqFh8TYZmIGNrcOk29y7",
-    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78RfFHaGqBOZqUkbfnH8DdaLl94tBQWoPJXj5u",
-    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78tsO00owhKYk0gF8IzArB7XqCNp36TWjosGv9",
-    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78p4UTkMPD8q2ok0VEBvKeOdFbu31TiHmAWNIn",
-    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78tTBqG0RwhKYk0gF8IzArB7XqCNp36TWjosGv",
-    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78CWeHr2oFByWQJEx95Gw02YeMRNAuDPlHz8LI",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78WZ0XA8n2lEyVhDXz2vU5jxeOc1u0FrmnwZf4",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78crUw7XOw7nvOLUi6PsWqcXKbSRpB8hrTl19m",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78zKSliRY3wOJ7IdTqFLQDsfgb1eEyKNh0BRVY",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78AnbKlJtNcT7fU4iwVJSthuZ2sOaRklEmHxqQ",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78Pscp4CALcfPswktIg8YAhoDlQH5ziOpUW6yS",
+    "https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa786z80oPp0KwR2MNrOLcTkd9mUIHz1yZFioxtS",
   ],
   features: [
     {

@@ -29,7 +29,7 @@ export function HeroSection() {
             {/* Product image */}
             <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden shadow-[0_0_60px_rgba(123,47,255,0.12),0_0_120px_rgba(201,168,76,0.05)]">
               <img
-                src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa781GpeDUTKvCQiR0lowqFh8TYZmIGNrcOk29y7"
+                src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78WZ0XA8n2lEyVhDXz2vU5jxeOc1u0FrmnwZf4"
                 alt="Nebula Astronaut Projector"
                 className="w-full h-full object-cover"
               />
