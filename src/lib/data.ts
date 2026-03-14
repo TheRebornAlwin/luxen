@@ -18,7 +18,7 @@ export const heroProduct: Product = {
   title: "Nebula Astronaut Projector",
   tagline: "Your room. Your galaxy.",
   description:
-    "The Nebula Astronaut Projector fills your ceiling and walls with thousands of stars, swirling nebula clouds, and deep space colors. Just place it on your desk, turn off the lights, and your entire room transforms into a breathtaking galaxy experience. It's not a light, it's a vibe.",
+    "The Nebula Astronaut Projector fills your ceiling and walls with thousands of stars, swirling nebula clouds, and deep space colors. Just place it on your desk, turn off the lights, and your entire room transforms into a breathtaking galaxy experience.",
   price: 39.99,
   compareAtPrice: 79.99,
   images: [
