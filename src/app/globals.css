@@ -5,7 +5,7 @@
   --foreground: #ffffff;
   --space-black: #0a0a0f;
   --midnight-navy: #0d1b2a;
-  --gold: #c9a84c;
+  --gold: #d4af37;
   --electric-violet: #7b2fff;
   --white: #ffffff;
   --transparent: transparent;
@@ -15,7 +15,7 @@
   --blue-500: #7b2fff;
   --indigo-300: #9b6dff;
   --blue-300: #1a2744;
-  --violet-200: #c9a84c;
+  --violet-200: #d4af37;
   --blue-400: #4a1d96;
 }
 
@@ -24,7 +24,7 @@
   --color-foreground: var(--foreground);
   --color-space-black: #0a0a0f;
   --color-midnight-navy: #0d1b2a;
-  --color-gold: #c9a84c;
+  --color-gold: #d4af37;
   --color-electric-violet: #7b2fff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -143,12 +143,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c9a84c40;
+  background: #d4af3740;
 }
 
 /* Selection */
 ::selection {
-  background: #c9a84c40;
+  background: #d4af3740;
   color: #ffffff;
 }
 
