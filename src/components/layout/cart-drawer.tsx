@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/contexts/cart-context";
+import { buildCheckoutUrl } from "@/lib/shopify";
 
 export function CartDrawer() {
   const {
@@ -79,14 +80,22 @@ export function CartDrawer() {
                         exit={{ opacity: 0, y: -10 }}
                         className="flex gap-4 rounded-xl bg-white/[0.03] p-4 border border-white/[0.06]"
                       >
-                        {/* Image placeholder */}
-                        <div className="h-20 w-20 rounded-lg bg-midnight-navy flex items-center justify-center shrink-0">
-                          <span className="text-2xl opacity-30">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
-                              <circle cx="12" cy="12" r="10" />
-                              <path d="M12 2a7 7 0 017 7" />
-                            </svg>
-                          </span>
+                        {/* Image */}
+                        <div className="h-20 w-20 rounded-lg bg-midnight-navy overflow-hidden shrink-0">
+                          {item.image ? (
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full flex items-center justify-center">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-30">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 2a7 7 0 017 7" />
+                              </svg>
+                            </div>
+                          )}
                         </div>
 
                         <div className="flex-1 min-w-0">
@@ -145,7 +154,12 @@ export function CartDrawer() {
                   <p className="text-[11px] text-white/30">
                     Shipping & taxes calculated at checkout
                   </p>
-                  <button className="w-full rounded-full bg-gold py-3 text-sm font-semibold text-space-black hover:bg-gold/90 transition-colors">
+                  <button
+                    onClick={() => {
+                      window.location.href = buildCheckoutUrl(items);
+                    }}
+                    className="w-full rounded-full bg-gold py-3 text-sm font-semibold text-space-black hover:bg-gold/90 transition-colors"
+                  >
                     Checkout
                   </button>
                 </div>

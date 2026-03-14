@@ -4,6 +4,7 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { GlassmorphismCard } from "@/components/ui/glassmorphism-card";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { useCart } from "@/contexts/cart-context";
+import { buildCheckoutUrl } from "@/lib/shopify";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -143,6 +144,9 @@ export default function CartPage() {
                     variant="primary"
                     size="lg"
                     className="w-full justify-center"
+                    onClick={() => {
+                      window.location.href = buildCheckoutUrl(items);
+                    }}
                   >
                     Proceed to Checkout
                   </MagneticButton>
