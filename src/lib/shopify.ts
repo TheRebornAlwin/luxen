@@ -1,6 +1,6 @@
 // Shopify Storefront API config
 const SHOPIFY_DOMAIN = "luxen-9735.myshopify.com";
-const STOREFRONT_ACCESS_TOKEN = "ca984b18732418bb44525f33f8954533";
+const STOREFRONT_ACCESS_TOKEN = "50eaebf1f8883fabe49de3ea02caa12b";
 const API_VERSION = "2026-01";
 
 // Map local product IDs to Shopify variant GIDs
