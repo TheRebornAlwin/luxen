@@ -72,23 +72,5 @@ export async function createCheckout(
     throw new Error("Failed to create checkout");
   }
 
-  // Shopify returns luxenlights.com (primary domain) but we need to send
-  // the customer to myshopify.com directly to avoid redirect loops
-  return checkoutUrl.replace("luxenlights.com", SHOPIFY_DOMAIN);
-}
-
-// Keep the old sync function as a fallback
-export function buildCheckoutUrl(
-  items: { id: string; quantity: number }[]
-): string {
-  const lineItems = items
-    .map((item) => {
-      const numericId = VARIANT_MAP[item.id]?.split("/").pop();
-      if (!numericId) return null;
-      return `${numericId}:${item.quantity}`;
-    })
-    .filter(Boolean)
-    .join(",");
-
-  return `https://${SHOPIFY_DOMAIN}/cart/${lineItems}`;
+  return checkoutUrl;
 }
