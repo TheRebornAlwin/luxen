@@ -72,7 +72,9 @@ export async function createCheckout(
     throw new Error("Failed to create checkout");
   }
 
-  return checkoutUrl;
+  // Shopify returns luxenlights.com (primary domain) but we need to send
+  // the customer to myshopify.com directly to avoid redirect loops
+  return checkoutUrl.replace("luxenlights.com", SHOPIFY_DOMAIN);
 }
 
 // Keep the old sync function as a fallback

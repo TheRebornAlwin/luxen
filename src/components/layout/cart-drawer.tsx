@@ -153,10 +153,7 @@ export function CartDrawer() {
                       ${totalPrice.toFixed(2)}
                     </span>
                   </div>
-                  <p className="text-[11px] text-white/30">
-                    Shipping & taxes calculated at checkout
-                  </p>
-                  <button
+<button
                     disabled={checkingOut}
                     onClick={async () => {
                       setCheckingOut(true);

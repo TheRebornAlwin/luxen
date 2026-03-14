@@ -137,9 +137,6 @@ export default function CartPage() {
                   </div>
                 </div>
 
-                <p className="text-[11px] text-white/30 mt-4">
-                  Taxes calculated at checkout. Free shipping on all orders.
-                </p>
 
                 <div className="mt-6">
                   <MagneticButton
