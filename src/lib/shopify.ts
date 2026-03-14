@@ -1,5 +1,5 @@
 // Shopify store config
-const SHOPIFY_DOMAIN = "luxen-9735.myshopify.com";
+const SHOPIFY_DOMAIN = "luxenlights.com";
 
 // Map local product IDs to Shopify variant IDs
 const VARIANT_MAP: Record<string, string> = {
