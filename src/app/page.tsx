@@ -1,7 +1,6 @@
 "use client";
 
 import { HeroSection } from "@/components/sections/hero-section";
-import { FeaturedCollection } from "@/components/sections/featured-collection";
 import { ProductShowcase } from "@/components/sections/product-showcase";
 import { BrandStory } from "@/components/sections/brand-story";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -15,7 +14,6 @@ export default function Home() {
       <SectionDivider variant="aurora" />
       <WhyLuxen />
       <SectionDivider variant="ray" className="max-w-2xl mx-auto" />
-      <FeaturedCollection />
       <ProductShowcase />
       <SectionDivider variant="ray" className="max-w-2xl mx-auto" />
       <Testimonials />
