@@ -72,11 +72,7 @@ export async function createCheckout(
     throw new Error("Failed to create checkout");
   }
 
-  // Replace myshopify.com with luxenlights.com so the Worker can proxy it
-  return checkoutUrl.replace(
-    "luxen-9735.myshopify.com",
-    "luxenlights.com"
-  );
+  return checkoutUrl;
 }
 
 // Keep the old sync function as a fallback
