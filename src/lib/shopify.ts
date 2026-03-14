@@ -73,5 +73,8 @@ export async function createCheckout(
   }
 
   // Rewrite to luxenlights.com so the Cloudflare Worker proxies checkout
-  return checkoutUrl.replace(SHOPIFY_DOMAIN, "luxenlights.com");
+  const rewritten = checkoutUrl.replace(SHOPIFY_DOMAIN, "luxenlights.com");
+  console.log("[checkout] original:", checkoutUrl);
+  console.log("[checkout] rewritten:", rewritten);
+  return rewritten;
 }
