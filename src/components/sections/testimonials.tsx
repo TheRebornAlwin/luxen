@@ -9,25 +9,25 @@ const testimonials = [
   {
     name: "Sarah M.",
     location: "New York, USA",
-    text: "I genuinely can't sleep without it now. My room looks like a scene from Interstellar every night. Best purchase I've made this year.",
+    text: "ok so i was skeptical at first but this thing is actually insane?? my whole ceiling looks like outer space now. literally cant sleep without it anymore",
     rating: 5,
   },
   {
     name: "James T.",
     location: "London, UK",
-    text: "Bought it for my gaming room and the vibe is absolutely unreal. The colours are so rich and the projection covers the whole ceiling. 10/10.",
+    text: "Got it for my gaming setup and WOW. The colours are super rich, covers the whole ceiling too. Mates come over and they all want one now lol. 10/10 would buy again.",
     rating: 5,
   },
   {
     name: "Emily K.",
     location: "Melbourne, AU",
-    text: "Got this for my daughter and she's obsessed. The quality is premium — you can tell this isn't some cheap knockoff. Silent motor too which is a huge plus.",
+    text: "Bought this for my daughter, she absolutely loves it. You can tell its well made, not like the cheap ones that break after a week. Motor is silent too which is a big plus for us.",
     rating: 5,
   },
   {
     name: "David R.",
     location: "Toronto, CA",
-    text: "The remote control and timer are game changers. I set it to turn off after 30 minutes and fall asleep under the stars every single night.",
+    text: "The timer feature is so clutch. I set it for 30 min and just fall asleep under the stars every night, turns off on its own. Remote is nice too so I don't have to get out of bed",
     rating: 5,
   },
 ];

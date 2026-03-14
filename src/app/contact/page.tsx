@@ -54,16 +54,6 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <label className="block text-xs tracking-wider uppercase text-white/40 mb-2">
-                    Order Number (optional)
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full rounded-lg bg-white/5 border border-white/10 px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-gold/50 focus:outline-none transition-colors"
-                    placeholder="#LUXEN-0000"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs tracking-wider uppercase text-white/40 mb-2">
                     Message
                   </label>
                   <textarea

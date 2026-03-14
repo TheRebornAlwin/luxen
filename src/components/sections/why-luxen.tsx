@@ -12,7 +12,7 @@ const reasons = [
       </svg>
     ),
     title: "30-Day Guarantee",
-    description: "Not satisfied? Full refund within 30 days — no questions asked.",
+    description: "Not satisfied? Full refund within 30 days, no questions asked.",
   },
   {
     icon: (

@@ -38,7 +38,7 @@ export function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2">
           {/* Logo */}
           <Link href="/" className="relative z-10">
             <img
@@ -46,7 +46,7 @@ export function Header() {
               alt="Luxen"
               width={100}
               height={100}
-              className="h-20 md:h-24 w-auto transition-opacity hover:opacity-80"
+              className="h-10 md:h-12 w-auto transition-opacity hover:opacity-80"
             />
           </Link>
 

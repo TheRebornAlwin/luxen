@@ -11,7 +11,7 @@ export function AnnouncementBar() {
     <div className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-space-black via-midnight-navy to-space-black border-b border-white/[0.06]">
       <div className="flex items-center justify-center px-4 py-2">
         <p className="text-xs tracking-[0.2em] uppercase text-white/70">
-          <span className="text-gold">Free Shipping</span> — Limited Time
+          <span className="text-gold">Free Shipping</span> | Limited Time
           Only
         </p>
         <button

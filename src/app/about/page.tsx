@@ -54,7 +54,7 @@ export default function AboutPage() {
               <span className="text-gold"> to your home</span>
             </h1>
             <p className="text-lg text-white/50 leading-relaxed">
-              Luxen was born from a simple but powerful idea — that the awe of
+              Luxen was born from a simple but powerful idea. The awe of
               standing under a star-filled sky shouldn&apos;t be reserved for remote
               countryside escapes. It should be something you can experience
               every single night, in the comfort of your own room.
@@ -103,7 +103,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Today, Luxen has helped over 50,000 customers transform their
-                spaces — from bedrooms to gaming rooms, from meditation spaces
+                spaces, from bedrooms to gaming rooms, from meditation spaces
                 to romantic settings. And we are just getting started.
               </p>
             </div>

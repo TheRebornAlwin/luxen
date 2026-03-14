@@ -31,14 +31,14 @@ export function BrandStory() {
             </h2>
             <div className="space-y-4 text-white/45 leading-relaxed">
               <p>
-                Luxen was created with a single vision — to bring the
+                Luxen was created with a single vision. To bring the
                 breathtaking beauty of the night sky into every home. We
                 believed that everyone deserves to experience the wonder of the
                 cosmos, not just on clear nights far from the city, but every
                 single evening.
               </p>
               <p>
-                Our team of designers and engineers obsess over every detail —
+                Our team of designers and engineers obsess over every detail,
                 from the colour accuracy of our nebula projections to the
                 whisper-quiet motors that let you drift off under the stars
                 without a sound. This is not just a product. It is an

@@ -147,7 +147,7 @@ export const products: Product[] = [
       },
       {
         title: "Star Density Control",
-        description: "Adjust how many stars fill your sky — from a few constellations to the entire Milky Way.",
+        description: "Adjust how many stars fill your sky, from a few constellations to the entire Milky Way.",
       },
     ],
     specs: [
