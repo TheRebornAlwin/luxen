@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/contexts/cart-context";
-import { buildCheckoutUrl } from "@/lib/shopify";
+import { createCheckout } from "@/lib/shopify";
 
 export function CartDrawer() {
   const {
@@ -13,6 +14,7 @@ export function CartDrawer() {
     isOpen,
     setIsOpen,
   } = useCart();
+  const [checkingOut, setCheckingOut] = useState(false);
 
   return (
     <AnimatePresence>
@@ -155,12 +157,20 @@ export function CartDrawer() {
                     Shipping & taxes calculated at checkout
                   </p>
                   <button
-                    onClick={() => {
-                      window.location.href = buildCheckoutUrl(items);
+                    disabled={checkingOut}
+                    onClick={async () => {
+                      setCheckingOut(true);
+                      try {
+                        const url = await createCheckout(items);
+                        window.location.href = url;
+                      } catch {
+                        setCheckingOut(false);
+                        alert("Something went wrong. Please try again.");
+                      }
                     }}
-                    className="w-full rounded-full bg-gold py-3 text-sm font-semibold text-space-black hover:bg-gold/90 transition-colors"
+                    className="w-full rounded-full bg-gold py-3 text-sm font-semibold text-space-black hover:bg-gold/90 transition-colors disabled:opacity-50"
                   >
-                    Checkout
+                    {checkingOut ? "Redirecting..." : "Checkout"}
                   </button>
                 </div>
               )}

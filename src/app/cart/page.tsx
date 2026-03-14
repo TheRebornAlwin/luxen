@@ -1,15 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { GlassmorphismCard } from "@/components/ui/glassmorphism-card";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { useCart } from "@/contexts/cart-context";
-import { buildCheckoutUrl } from "@/lib/shopify";
+import { createCheckout } from "@/lib/shopify";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function CartPage() {
   const { items, removeItem, updateQuantity, totalPrice } = useCart();
+  const [checkingOut, setCheckingOut] = useState(false);
 
   return (
     <main className="min-h-screen bg-space-black pt-32 pb-20">
@@ -144,11 +146,19 @@ export default function CartPage() {
                     variant="primary"
                     size="lg"
                     className="w-full justify-center"
-                    onClick={() => {
-                      window.location.href = buildCheckoutUrl(items);
+                    disabled={checkingOut}
+                    onClick={async () => {
+                      setCheckingOut(true);
+                      try {
+                        const url = await createCheckout(items);
+                        window.location.href = url;
+                      } catch {
+                        setCheckingOut(false);
+                        alert("Something went wrong. Please try again.");
+                      }
                     }}
                   >
-                    Proceed to Checkout
+                    {checkingOut ? "Redirecting..." : "Proceed to Checkout"}
                   </MagneticButton>
                 </div>
               </GlassmorphismCard>

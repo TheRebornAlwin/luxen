@@ -9,6 +9,7 @@ interface MagneticButtonProps {
   variant?: "primary" | "secondary" | "ghost";
   size?: "sm" | "md" | "lg";
   href?: string;
+  disabled?: boolean;
 }
 
 export function MagneticButton({
@@ -18,6 +19,7 @@ export function MagneticButton({
   variant = "primary",
   size = "md",
   href,
+  disabled,
 }: MagneticButtonProps) {
   const variants = {
     primary:
@@ -39,9 +41,10 @@ export function MagneticButton({
         "relative inline-flex items-center justify-center gap-2 rounded-full overflow-hidden transition-all duration-300 hover:-translate-y-0.5",
         variants[variant],
         sizes[size],
+        disabled && "opacity-50 pointer-events-none",
         className
       )}
-      onClick={onClick}
+      onClick={disabled ? undefined : onClick}
     >
       <span className="relative z-10">{children}</span>
     </div>
