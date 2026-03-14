@@ -72,9 +72,5 @@ export async function createCheckout(
     throw new Error("Failed to create checkout");
   }
 
-  // Rewrite to luxenlights.com so the Cloudflare Worker proxies checkout
-  const rewritten = checkoutUrl.replace(SHOPIFY_DOMAIN, "luxenlights.com");
-  console.log("[checkout] original:", checkoutUrl);
-  console.log("[checkout] rewritten:", rewritten);
-  return rewritten;
+  return checkoutUrl;
 }
