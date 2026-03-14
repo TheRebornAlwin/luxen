@@ -36,6 +36,7 @@ export function ProductShowcase() {
                   <img
                     src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78WZ0XA8n2lEyVhDXz2vU5jxeOc1u0FrmnwZf4"
                     alt="Nebula Astronaut Projector"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>

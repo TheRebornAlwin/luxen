@@ -17,7 +17,7 @@ export function LoadingScreen() {
       setLoading(false);
       sessionStorage.setItem("luxen-loaded", "1");
       document.body.style.overflow = "";
-    }, 1800);
+    }, 1200);
     return () => {
       document.body.style.overflow = "";
       clearTimeout(timer);

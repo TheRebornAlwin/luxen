@@ -68,6 +68,7 @@ export function Footer() {
               alt="Luxen"
               width={80}
               height={80}
+              loading="lazy"
               className="h-20 w-auto mb-4 opacity-70"
             />
             <p className="text-xs text-white/30 leading-relaxed">
