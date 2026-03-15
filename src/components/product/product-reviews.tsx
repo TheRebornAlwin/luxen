@@ -69,8 +69,8 @@ function StarRating({ rating }: { rating: number }) {
           width="14"
           height="14"
           viewBox="0 0 24 24"
-          fill={star <= rating ? "#d4af37" : "none"}
-          stroke="#d4af37"
+          fill={star <= rating ? "#F5C542" : "none"}
+          stroke="#F5C542"
           strokeWidth="1.5"
         >
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -104,7 +104,7 @@ export function ProductReviews() {
           {[5, 4, 3, 2, 1].map((rating, i) => (
             <div key={rating} className="flex items-center gap-2">
               <span className="text-xs text-white/40 w-3">{rating}</span>
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="#d4af37" stroke="#d4af37" strokeWidth="1.5">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#F5C542" stroke="#F5C542" strokeWidth="1.5">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
               <div className="flex-1 h-1.5 rounded-full bg-white/[0.06] overflow-hidden">

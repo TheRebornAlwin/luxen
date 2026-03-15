@@ -58,7 +58,7 @@ export function BrandStory() {
                   className="p-6 md:p-8 text-center group hover:border-gold/15 transition-all duration-500"
                   glowColor={
                     i % 2 === 0
-                      ? "rgba(201, 168, 76, 0.08)"
+                      ? "rgba(245, 197, 66, 0.08)"
                       : "rgba(123, 47, 255, 0.08)"
                   }
                 >

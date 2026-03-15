@@ -41,7 +41,7 @@ export function SectionDivider({
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(90deg, transparent, #7b2fff40, #d4af3740, #7b2fff40, transparent)",
+            "linear-gradient(90deg, transparent, #7b2fff40, #F5C54240, #7b2fff40, transparent)",
           backgroundSize: "200% 100%",
           animation: "shimmer 4s linear infinite",
         }}

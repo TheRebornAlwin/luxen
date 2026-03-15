@@ -60,7 +60,7 @@ export function Testimonials() {
             <ScrollReveal key={i} delay={i * 0.1}>
               <GlassmorphismCard
                 className="p-6 h-full flex flex-col group hover:border-gold/15 transition-all duration-500"
-                glowColor="rgba(201, 168, 76, 0.05)"
+                glowColor="rgba(245, 197, 66, 0.05)"
               >
                 {/* Stars */}
                 <div className="flex gap-0.5 mb-4">

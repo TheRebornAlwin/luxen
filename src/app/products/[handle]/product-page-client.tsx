@@ -5,7 +5,6 @@ import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { GlassmorphismCard } from "@/components/ui/glassmorphism-card";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { SectionDivider } from "@/components/ui/section-divider";
-import { ProductCard } from "@/components/product/product-card";
 import { ProductTabs } from "@/components/product/product-tabs";
 import { ProductReviews } from "@/components/product/product-reviews";
 import { VolumeDiscounts } from "@/components/product/volume-discounts";
@@ -39,8 +38,6 @@ export function ProductPageClient() {
   const discount = Math.round(
     ((product.compareAtPrice - product.price) / product.compareAtPrice) * 100
   );
-
-  const relatedProducts = products.filter((p) => p.id !== product.id).slice(0, 4);
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {
@@ -342,24 +339,6 @@ export function ProductPageClient() {
           </ScrollReveal>
         </div>
 
-        {/* Related Products */}
-        {relatedProducts.length > 0 && (
-          <div className="mt-20">
-            <SectionDivider variant="aurora" className="mb-16" />
-            <ScrollReveal>
-              <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-                You Might Also Like
-              </h2>
-            </ScrollReveal>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {relatedProducts.map((p, i) => (
-                <ScrollReveal key={p.id} delay={i * 0.1}>
-                  <ProductCard product={p} />
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </main>
   );

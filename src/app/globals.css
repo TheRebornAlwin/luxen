@@ -5,7 +5,7 @@
   --foreground: #ffffff;
   --space-black: #0a0a0f;
   --midnight-navy: #0d1b2a;
-  --gold: #d4af37;
+  --gold: #F5C542;
   --electric-violet: #7b2fff;
   --white: #ffffff;
   --transparent: transparent;
@@ -15,7 +15,7 @@
   --blue-500: #7b2fff;
   --indigo-300: #9b6dff;
   --blue-300: #1a2744;
-  --violet-200: #d4af37;
+  --violet-200: #F5C542;
   --blue-400: #4a1d96;
 }
 
@@ -24,7 +24,7 @@
   --color-foreground: var(--foreground);
   --color-space-black: #0a0a0f;
   --color-midnight-navy: #0d1b2a;
-  --color-gold: #d4af37;
+  --color-gold: #F5C542;
   --color-electric-violet: #7b2fff;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -143,12 +143,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #d4af3740;
+  background: #F5C54240;
 }
 
 /* Selection */
 ::selection {
-  background: #d4af3740;
+  background: #F5C54240;
   color: #ffffff;
 }
 
@@ -167,7 +167,7 @@ body {
 .god-ray {
   background: radial-gradient(
     ellipse at center bottom,
-    rgba(201, 168, 76, 0.15) 0%,
+    rgba(245, 197, 66, 0.15) 0%,
     rgba(123, 47, 255, 0.08) 30%,
     transparent 70%
   );

@@ -66,7 +66,7 @@ export function CustomCursor() {
           width: 12,
           height: 12,
           borderRadius: "50%",
-          background: "#d4af37",
+          background: "#F5C542",
           opacity: visible ? 1 : 0,
           willChange: "transform",
           transition: "opacity 0.2s",
