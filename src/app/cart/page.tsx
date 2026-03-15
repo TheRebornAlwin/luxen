@@ -146,14 +146,6 @@ export default function CartPage() {
                     disabled={checkingOut}
                     onClick={async () => {
                       setCheckingOut(true);
-                      if (typeof window !== "undefined" && typeof window.fbq === "function") {
-                        window.fbq("track", "InitiateCheckout", {
-                          content_ids: items.map((i) => i.id),
-                          num_items: items.reduce((s, i) => s + i.quantity, 0),
-                          value: totalPrice,
-                          currency: "USD",
-                        });
-                      }
                       try {
                         const url = await createCheckout(items);
                         window.location.href = url;
