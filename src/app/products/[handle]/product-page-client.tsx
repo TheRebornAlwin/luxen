@@ -6,6 +6,10 @@ import { GlassmorphismCard } from "@/components/ui/glassmorphism-card";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 import { SectionDivider } from "@/components/ui/section-divider";
 import { ProductCard } from "@/components/product/product-card";
+import { ProductTabs } from "@/components/product/product-tabs";
+import { ProductReviews } from "@/components/product/product-reviews";
+import { VolumeDiscounts } from "@/components/product/volume-discounts";
+import { useCurrency } from "@/components/product/currency-converter";
 import { useCart } from "@/contexts/cart-context";
 import { products } from "@/lib/data";
 import { useState } from "react";
@@ -15,6 +19,7 @@ export function ProductPageClient() {
   const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const { convert, currencyName } = useCurrency();
 
   const product = products.find((p) => p.handle === params.handle);
 
@@ -131,13 +136,13 @@ export function ProductPageClient() {
               </p>
 
               {/* Price */}
-              <div className="flex items-baseline gap-3 mb-6">
+              <div className="flex items-baseline gap-3 mb-2">
                 <span className="text-3xl font-bold text-gold">
-                  ${product.price.toFixed(2)}
+                  {convert(product.price)}
                 </span>
                 {product.compareAtPrice > product.price && (
                   <span className="text-lg text-white/30 line-through">
-                    ${product.compareAtPrice.toFixed(2)}
+                    {convert(product.compareAtPrice)}
                   </span>
                 )}
                 {discount > 0 && (
@@ -146,11 +151,26 @@ export function ProductPageClient() {
                   </span>
                 )}
               </div>
+              {currencyName !== "USD" && (
+                <p className="text-[10px] text-white/25 mb-6">
+                  Prices shown in {currencyName}. Charged in USD at checkout.
+                </p>
+              )}
+              {currencyName === "USD" && <div className="mb-6" />}
 
               {/* Description */}
-              <p className="text-sm text-white/50 leading-relaxed mb-8">
+              <p className="text-sm text-white/50 leading-relaxed mb-6">
                 {product.description}
               </p>
+
+              {/* Volume Discounts */}
+              <div className="mb-6">
+                <VolumeDiscounts
+                  price={product.price}
+                  quantity={quantity}
+                  onQuantityChange={setQuantity}
+                />
+              </div>
 
               {/* Quantity + Add to Cart */}
               <div className="flex items-center gap-4 mb-8">
@@ -205,23 +225,76 @@ export function ProductPageClient() {
               </div>
             </ScrollReveal>
 
-            {/* Specs */}
-            <ScrollReveal direction="right" delay={0.2}>
+            {/* Product Tabs */}
+            <ScrollReveal direction="right" delay={0.1}>
               <GlassmorphismCard className="p-6">
-                <h3 className="font-semibold text-sm mb-4 uppercase tracking-wider text-white/60">
-                  Specifications
-                </h3>
-                <ul className="space-y-2">
-                  {product.specs.map((spec, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center gap-3 text-sm text-white/50"
-                    >
-                      <span className="w-1 h-1 rounded-full bg-gold/60 shrink-0" />
-                      {spec}
-                    </li>
-                  ))}
-                </ul>
+                <ProductTabs
+                  tabs={[
+                    {
+                      label: "Details",
+                      content: (
+                        <ul className="space-y-2">
+                          {product.specs.map((spec, i) => (
+                            <li key={i} className="flex items-center gap-3">
+                              <span className="w-1 h-1 rounded-full bg-gold/60 shrink-0" />
+                              {spec}
+                            </li>
+                          ))}
+                        </ul>
+                      ),
+                    },
+                    {
+                      label: "Shipping",
+                      content: (
+                        <div className="space-y-3">
+                          <p>
+                            Due to high demand, orders may take 2-4 weeks to arrive.
+                            We ship worldwide with tracking included on every order.
+                          </p>
+                          <p>
+                            Free shipping on all orders. No minimum purchase required.
+                          </p>
+                          <p>
+                            Need help? Email us at{" "}
+                            <a
+                              href="mailto:shoptheluxen@gmail.com"
+                              className="text-gold hover:text-gold/80 transition-colors"
+                            >
+                              shoptheluxen@gmail.com
+                            </a>
+                          </p>
+                        </div>
+                      ),
+                    },
+                    {
+                      label: "Our Guarantee",
+                      content: (
+                        <div className="space-y-3">
+                          <p>
+                            We truly believe we make some of the best galaxy projectors
+                            available, and we back that up with a risk-free, ironclad
+                            30-day money back guarantee.
+                          </p>
+                          <p>
+                            If you don't have a positive experience for any reason,
+                            we will do whatever it takes to make sure you are 100%
+                            satisfied with your purchase.
+                          </p>
+                          <p>
+                            Contact our friendly support team at{" "}
+                            <a
+                              href="mailto:shoptheluxen@gmail.com"
+                              className="text-gold hover:text-gold/80 transition-colors"
+                            >
+                              shoptheluxen@gmail.com
+                            </a>
+                            {" "}and we'll make it right.
+                          </p>
+                        </div>
+                      ),
+                    },
+                  ]}
+                />
               </GlassmorphismCard>
             </ScrollReveal>
           </div>
@@ -255,6 +328,19 @@ export function ProductPageClient() {
             </div>
           </div>
         )}
+
+        {/* Reviews Section */}
+        <div className="mt-20">
+          <SectionDivider variant="aurora" className="mb-16" />
+          <ScrollReveal>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+              Customer Reviews
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal>
+            <ProductReviews />
+          </ScrollReveal>
+        </div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
