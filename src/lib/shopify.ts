@@ -80,6 +80,9 @@ export async function createCheckout(
  * Creates a customer record in Shopify with email marketing consent.
  */
 export async function subscribeNewsletter(email: string): Promise<void> {
+  // Generate a random password - customer doesn't need it, this is just for newsletter signup
+  const password = crypto.randomUUID();
+
   const response = await fetch(
     `https://${SHOPIFY_DOMAIN}/api/${API_VERSION}/graphql.json`,
     {
@@ -106,6 +109,7 @@ export async function subscribeNewsletter(email: string): Promise<void> {
         variables: {
           input: {
             email,
+            password,
             acceptsMarketing: true,
           },
         },
@@ -114,7 +118,12 @@ export async function subscribeNewsletter(email: string): Promise<void> {
   );
 
   const json = await response.json();
-  const errors = json.data?.customerCreate?.customerUserErrors;
+
+  if (!json.data) {
+    throw new Error("Failed to connect");
+  }
+
+  const errors = json.data.customerCreate?.customerUserErrors;
 
   if (errors && errors.length > 0) {
     // "TAKEN" means already subscribed - treat as success

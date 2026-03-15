@@ -57,9 +57,14 @@ export function Footer() {
               products and exclusive drops.
             </p>
             {status === "success" ? (
-              <p className="text-gold text-sm font-medium">
-                You&apos;re in! Check your inbox for 10% off.
-              </p>
+              <div className="text-center">
+                <p className="text-gold text-sm font-medium mb-2">
+                  You&apos;re in! Here&apos;s your 10% off code:
+                </p>
+                <span className="inline-block bg-white/5 border border-gold/30 rounded-lg px-5 py-2 text-lg font-bold tracking-widest text-gold">
+                  WELCOME10
+                </span>
+              </div>
             ) : (
               <form
                 onSubmit={handleSubscribe}
