@@ -56,6 +56,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       return [...prev, { ...item, quantity: 1 }];
     });
     setIsOpen(true);
+    // Meta Pixel: track AddToCart
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "AddToCart", {
+        content_name: item.title,
+        content_ids: [item.id],
+        content_type: "product",
+        value: item.price,
+        currency: "USD",
+      });
+    }
   }, []);
 
   const removeItem = useCallback((id: string) => {
