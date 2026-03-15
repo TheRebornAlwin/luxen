@@ -1,10 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { SectionDivider } from "@/components/ui/section-divider";
-import { ScrollReveal } from "@/components/ui/scroll-reveal";
-import { subscribeNewsletter } from "@/lib/shopify";
 
 const footerLinks = {
   shop: [
@@ -25,76 +22,9 @@ const footerLinks = {
 };
 
 export function Footer() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || status === "loading") return;
-    setStatus("loading");
-    try {
-      await subscribeNewsletter(email);
-      setStatus("success");
-      setEmail("");
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <footer className="relative bg-space-black">
       <SectionDivider variant="aurora" />
-
-      {/* Newsletter Section */}
-      <ScrollReveal>
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="glass mx-auto max-w-2xl rounded-2xl p-8 md:p-12 text-center">
-            <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
-              Join the <span className="text-gold">Luxen</span> Universe
-            </h3>
-            <p className="text-white/50 text-sm mb-6">
-              Get 10% off your first order and be the first to know about new
-              products and exclusive drops.
-            </p>
-            {status === "success" ? (
-              <div className="text-center">
-                <p className="text-gold text-sm font-medium mb-2">
-                  You&apos;re in! Here&apos;s your 10% off code:
-                </p>
-                <span className="inline-block bg-white/5 border border-gold/30 rounded-lg px-5 py-2 text-lg font-bold tracking-widest text-gold">
-                  WELCOME10
-                </span>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubscribe}
-                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 rounded-full bg-white/5 border border-white/10 px-5 py-3 text-sm text-white placeholder:text-white/30 focus:border-gold/50 focus:outline-none transition-colors"
-                />
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="rounded-full bg-gold px-6 py-3 text-sm font-semibold text-space-black hover:bg-gold/90 transition-colors disabled:opacity-50"
-                >
-                  {status === "loading" ? "Subscribing..." : "Subscribe"}
-                </button>
-                {status === "error" && (
-                  <p className="text-red-400/70 text-xs mt-1 sm:mt-0 sm:self-center">
-                    Something went wrong. Try again.
-                  </p>
-                )}
-              </form>
-            )}
-          </div>
-        </div>
-      </ScrollReveal>
 
       {/* Links */}
       <div className="mx-auto max-w-7xl px-6 pb-8">
