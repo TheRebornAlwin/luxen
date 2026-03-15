@@ -12,9 +12,6 @@ export function ProductShowcase() {
       <div className="mx-auto max-w-7xl px-6 py-20 md:py-32">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.3em] uppercase text-gold/80 mb-4">
-              Hero Product
-            </p>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
               {heroProduct.title}
             </h2>

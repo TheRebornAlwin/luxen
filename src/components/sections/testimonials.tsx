@@ -38,9 +38,6 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-36">
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.3em] uppercase text-gold/80 mb-4">
-              Reviews
-            </p>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
               What Our Customers{" "}
               <TextGradient variant="gold">Say</TextGradient>

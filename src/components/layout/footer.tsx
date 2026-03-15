@@ -72,8 +72,7 @@ export function Footer() {
               className="h-20 w-auto mb-4 opacity-70"
             />
             <p className="text-xs text-white/30 leading-relaxed">
-              Premium galaxy projectors and ambient lighting. Transforming
-              spaces into cosmic experiences.
+              Transforming spaces into cosmic experiences.
             </p>
           </div>
 

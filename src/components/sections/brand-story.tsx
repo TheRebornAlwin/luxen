@@ -20,9 +20,6 @@ export function BrandStory() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Left - Story */}
           <ScrollReveal direction="left">
-            <p className="text-xs tracking-[0.3em] uppercase text-gold/80 mb-4">
-              Our Story
-            </p>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight leading-[1.15] mb-6">
               Born from a love of
               <span className="block">
