@@ -338,7 +338,7 @@ export function ProductReviews() {
             Show More Reviews
           </button>
         ) : (
-          <p className="text-sm text-white/30">
+          <p className="text-sm text-gold">
             + {remainingTotal.toLocaleString()} more reviews
           </p>
         )}
