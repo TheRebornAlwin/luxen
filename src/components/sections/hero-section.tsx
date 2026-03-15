@@ -27,7 +27,7 @@ export function HeroSection() {
             <div className="absolute inset-0 -m-6 rounded-full bg-gradient-to-b from-gold/10 via-electric-violet/8 to-transparent blur-2xl animate-glow-pulse" />
 
             {/* Product image */}
-            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden shadow-[0_0_60px_rgba(123,47,255,0.12),0_0_120px_rgba(201,168,76,0.05)]">
+            <div className="relative w-44 h-44 md:w-56 md:h-56 rounded-full overflow-hidden shadow-[0_0_60px_rgba(123,47,255,0.12),0_0_120px_rgba(245,197,66,0.05)]">
               <img
                 src="https://cqdsz6sbj4.ufs.sh/f/Zv26MoXsTa78WZ0XA8n2lEyVhDXz2vU5jxeOc1u0FrmnwZf4"
                 alt="Nebula Astronaut Projector"

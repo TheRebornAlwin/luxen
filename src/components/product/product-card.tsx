@@ -45,7 +45,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
             {/* Discount badge */}
             {discount > 0 && (
-              <span className="absolute top-3 right-3 z-10 text-[10px] bg-gold/90 text-space-black font-bold px-2.5 py-0.5 rounded-full shadow-[0_0_12px_rgba(201,168,76,0.3)]">
+              <span className="absolute top-3 right-3 z-10 text-[10px] bg-gold/90 text-space-black font-bold px-2.5 py-0.5 rounded-full shadow-[0_0_12px_rgba(245,197,66,0.3)]">
                 -{discount}%
               </span>
             )}
