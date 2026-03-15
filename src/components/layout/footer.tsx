@@ -27,7 +27,7 @@ export function Footer() {
       <SectionDivider variant="aurora" />
 
       {/* Links */}
-      <div className="mx-auto max-w-7xl px-6 pb-8">
+      <div className="mx-auto max-w-7xl px-6 pt-12 pb-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">

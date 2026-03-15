@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 interface Review {
   name: string;
   rating: number;
@@ -58,7 +60,178 @@ const reviews: Review[] = [
     date: "Jan 8, 2026",
     text: "My apartment feels like a completely different place with this thing on. I use the warm tones for relaxing and the cool blues for working. Love it so much I bought one for my sister too.",
   },
+  {
+    name: "Derek H.",
+    rating: 5,
+    date: "Jan 3, 2026",
+    text: "bought this on a whim and now i cant imagine my room without it. the nebula mode is unreal. my friends think i spent way more than i did lol",
+  },
+  {
+    name: "Priya S.",
+    rating: 5,
+    date: "Dec 28, 2025",
+    text: "Perfect gift for my husband. He uses it in his office and says it helps him focus. The warm orange tones are his favorite. Build quality is solid too.",
+  },
+  {
+    name: "Jordan B.",
+    rating: 4,
+    date: "Dec 22, 2025",
+    text: "great projector for the price. colors are rich and it fills up my bedroom ceiling nicely. only giving 4 stars because shipping took a bit longer than expected but the product itself is 5/5",
+  },
+  {
+    name: "Megan F.",
+    rating: 5,
+    date: "Dec 15, 2025",
+    text: "I have anxiety and this thing has genuinely helped me wind down at night. the slow color transitions are so calming. best purchase I've made this year honestly",
+  },
+  {
+    name: "Liam O.",
+    rating: 5,
+    date: "Dec 10, 2025",
+    text: "second one i bought. first one was for me and this one is a christmas gift for my little sister. she's going to lose her mind. quality is consistent between both units",
+  },
+  {
+    name: "Rachel T.",
+    rating: 5,
+    date: "Dec 4, 2025",
+    text: "the 30 minute timer is a lifesaver. i set it when i go to bed and it turns off on its own. no more getting up to turn it off. also the remote works from like 20 feet away which is nice",
+  },
+  {
+    name: "Kevin Z.",
+    rating: 5,
+    date: "Nov 28, 2025",
+    text: "put this in my kids playroom and they go absolutely crazy for it. the green and blue combo makes it look like an actual ocean on the ceiling. worth every penny",
+  },
+  {
+    name: "Olivia M.",
+    rating: 4,
+    date: "Nov 22, 2025",
+    text: "really pretty projector. i use it during yoga and meditation sessions at home. creates the perfect atmosphere. taking off one star only because i wish there were more warm tone options",
+  },
+  {
+    name: "Hassan A.",
+    rating: 5,
+    date: "Nov 15, 2025",
+    text: "this is my third galaxy projector and easily the best one. the others broke within a month, this one has been going strong for weeks now. motor is dead silent too",
+  },
+  {
+    name: "Sophie C.",
+    rating: 5,
+    date: "Nov 8, 2025",
+    text: "bought it for movie nights and it completely transforms the room. we turn it on with the red and purple nebula and it feels like a cinema. absolutely love it",
+  },
+  {
+    name: "Alex R.",
+    rating: 5,
+    date: "Nov 1, 2025",
+    text: "skeptical at first but this thing is legit. covers my entire ceiling and the colors are way more vivid than the photos show. highly recommend to anyone on the fence",
+  },
+  {
+    name: "Tanya J.",
+    rating: 5,
+    date: "Oct 26, 2025",
+    text: "got this as a treat for myself and i dont regret it one bit. my bedroom feels like a completely different space now. the quality is amazing for under 40 bucks",
+  },
+  {
+    name: "Brandon W.",
+    rating: 4,
+    date: "Oct 20, 2025",
+    text: "solid product. my only complaint is i wish the power cable was a bit longer but thats minor. the projection quality and color accuracy are excellent",
+  },
+  {
+    name: "Lisa N.",
+    rating: 5,
+    date: "Oct 14, 2025",
+    text: "my daughter has been begging for a galaxy projector and this one did not disappoint. she literally screamed when she saw it. the timer feature is perfect for her bedtime routine",
+  },
+  {
+    name: "Ryan P.",
+    rating: 5,
+    date: "Oct 8, 2025",
+    text: "i stream on twitch and this projector makes my background look insane on camera. viewers always ask about it. best investment for my setup by far",
+  },
+  {
+    name: "Jade K.",
+    rating: 5,
+    date: "Oct 2, 2025",
+    text: "bought 3 of these for my nail salon and my clients love them. creates such a relaxing atmosphere. already ordered 2 more for the other rooms",
+  },
+  {
+    name: "Carlos V.",
+    rating: 5,
+    date: "Sep 25, 2025",
+    text: "this thing is way better than expected. i was worried it would be some cheap toy but its actually really well built. the nebula effect looks incredible in the dark",
+  },
+  {
+    name: "Anna B.",
+    rating: 4,
+    date: "Sep 18, 2025",
+    text: "love the projector itself. beautiful colors and super quiet. only 4 stars because it took about 3 weeks to arrive but i understand its shipping from overseas",
+  },
+  {
+    name: "Mike T.",
+    rating: 5,
+    date: "Sep 12, 2025",
+    text: "my wife and i use this every night now. we put on the green aurora mode and just relax. its become part of our nightly routine. can't recommend enough",
+  },
+  {
+    name: "Zara L.",
+    rating: 5,
+    date: "Sep 5, 2025",
+    text: "i'm an interior designer and i recommend this to all my clients who want ambient lighting. the quality to price ratio is unbeatable. such a gorgeous product",
+  },
+  {
+    name: "Tom H.",
+    rating: 5,
+    date: "Aug 30, 2025",
+    text: "replaced my old galaxy projector with this one and the difference is night and day. so much brighter and the colors dont bleed into each other. 10/10",
+  },
+  {
+    name: "Danielle S.",
+    rating: 5,
+    date: "Aug 24, 2025",
+    text: "perfect for my apartment. i live in a studio so the ambient lighting really helps define the space. the remote control is a nice touch too",
+  },
+  {
+    name: "James C.",
+    rating: 5,
+    date: "Aug 18, 2025",
+    text: "got this for my dorm and my roommate immediately ordered one too. we have both going at the same time and it looks absolutely wild. best dorm room on campus",
+  },
+  {
+    name: "Kayla D.",
+    rating: 4,
+    date: "Aug 12, 2025",
+    text: "really beautiful projector. the purple and blue combo is my personal favorite. only reason for 4 stars is i wish there was a phone app to control it but the remote works fine",
+  },
+  {
+    name: "Noah F.",
+    rating: 5,
+    date: "Aug 5, 2025",
+    text: "ive shown this to literally everyone i know and they all want one. just ordered two more as birthday gifts. the quality is genuinely impressive for the price",
+  },
+  {
+    name: "Isabel R.",
+    rating: 5,
+    date: "Jul 30, 2025",
+    text: "my therapist recommended ambient lighting for my anxiety and this has been perfect. the slow rotating nebula effect is so soothing. best money i ever spent on my mental health",
+  },
+  {
+    name: "Ethan G.",
+    rating: 5,
+    date: "Jul 24, 2025",
+    text: "bought this for our baby's nursery and it works wonders. the soft light modes are gentle enough for sleep and our baby is fascinated by the stars on the ceiling",
+  },
+  {
+    name: "Chloe W.",
+    rating: 5,
+    date: "Jul 18, 2025",
+    text: "just wow. i didnt expect much for $40 but this exceeded all my expectations. the nebula projections are genuinely stunning. my whole family loves it",
+  },
 ];
+
+const REVIEWS_PER_PAGE = 6;
+const MAX_DISPLAYED = 36;
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -81,10 +254,14 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export function ProductReviews() {
+  const [visibleCount, setVisibleCount] = useState(REVIEWS_PER_PAGE);
   const TOTAL_REVIEWS = 1247;
   const AVG_RATING = 4.9;
-  // Realistic distribution for a 4.9 average
-  const ratingCounts = [1072, 131, 32, 9, 3]; // 5, 4, 3, 2, 1 star
+  const ratingCounts = [1072, 131, 32, 9, 3];
+
+  const displayedReviews = reviews.slice(0, visibleCount);
+  const hasMore = visibleCount < reviews.length;
+  const remainingTotal = TOTAL_REVIEWS - Math.min(visibleCount, reviews.length);
 
   return (
     <div>
@@ -108,7 +285,7 @@ export function ProductReviews() {
               </svg>
               <div className="flex-1 h-1.5 rounded-full bg-white/[0.06] overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-gold/70"
+                  className="h-full rounded-full bg-gold"
                   style={{
                     width: `${(ratingCounts[i] / TOTAL_REVIEWS) * 100}%`,
                   }}
@@ -124,7 +301,7 @@ export function ProductReviews() {
 
       {/* Reviews grid */}
       <div className="grid md:grid-cols-2 gap-4">
-        {reviews.map((review, i) => (
+        {displayedReviews.map((review, i) => (
           <div
             key={i}
             className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06]"
@@ -149,6 +326,22 @@ export function ProductReviews() {
             </p>
           </div>
         ))}
+      </div>
+
+      {/* Show more / remaining count */}
+      <div className="text-center mt-8">
+        {hasMore ? (
+          <button
+            onClick={() => setVisibleCount((prev) => Math.min(prev + REVIEWS_PER_PAGE, MAX_DISPLAYED))}
+            className="rounded-full border border-white/10 px-8 py-3 text-sm text-white/50 hover:text-gold hover:border-gold/30 transition-colors"
+          >
+            Show More Reviews
+          </button>
+        ) : (
+          <p className="text-sm text-white/30">
+            + {remainingTotal.toLocaleString()} more reviews
+          </p>
+        )}
       </div>
     </div>
   );
