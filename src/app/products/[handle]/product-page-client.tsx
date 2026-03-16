@@ -72,7 +72,7 @@ export function ProductPageClient() {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left - Image Gallery */}
           <ScrollReveal direction="left" className="min-w-0">
-            <div className="sticky top-28">
+            <div className="sticky top-28 overflow-hidden">
               {/* Main Image */}
               <div className="relative aspect-square rounded-2xl bg-gradient-to-b from-midnight-navy/40 to-space-black/60 border border-white/[0.06] overflow-hidden">
                 {product.images.length > 0 ? (
@@ -96,7 +96,7 @@ export function ProductPageClient() {
 
               {/* Thumbnails */}
               {product.images.length > 1 && (
-                <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
+                <div className="flex gap-2 mt-3 overflow-x-auto pb-1 max-w-full">
                   {product.images.map((img, i) => (
                     <button
                       key={i}
