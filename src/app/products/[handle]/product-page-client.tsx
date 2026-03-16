@@ -55,7 +55,7 @@ export function ProductPageClient() {
       <div className="mx-auto max-w-7xl px-6">
         {/* Breadcrumb */}
         <ScrollReveal>
-          <nav className="flex items-center gap-2 text-xs text-white/30 mb-8">
+          <nav className="flex items-center justify-center md:justify-start gap-2 text-xs text-white/30 mb-8">
             <a href="/" className="hover:text-white/50 transition-colors">
               Home
             </a>
@@ -96,7 +96,7 @@ export function ProductPageClient() {
 
               {/* Thumbnails */}
               {product.images.length > 1 && (
-                <div className="flex gap-2 mt-3 overflow-x-auto pb-1 max-w-full">
+                <div className="flex gap-2 mt-3 overflow-x-auto pb-1 max-w-full justify-center md:justify-start">
                   {product.images.map((img, i) => (
                     <button
                       key={i}
@@ -122,18 +122,18 @@ export function ProductPageClient() {
           {/* Right - Info */}
           <div className="min-w-0">
             <ScrollReveal direction="right">
-              <p className="text-xs tracking-[0.3em] uppercase text-gold/60 mb-2">
+              <p className="text-xs tracking-[0.3em] uppercase text-gold/60 mb-2 text-center md:text-left">
                 {product.category}
               </p>
-              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-center md:text-left">
                 {product.title}
               </h1>
-              <p className="text-lg text-white/40 italic mb-6">
+              <p className="text-lg text-white/40 italic mb-6 text-center md:text-left">
                 {product.tagline}
               </p>
 
               {/* Price */}
-              <div className="flex items-baseline gap-3 mb-2">
+              <div className="flex items-baseline gap-3 mb-2 justify-center md:justify-start">
                 <span className="text-3xl font-bold text-gold">
                   {convert(product.price)}
                 </span>
@@ -149,14 +149,14 @@ export function ProductPageClient() {
                 )}
               </div>
               {currencyName !== "USD" && (
-                <p className="text-[10px] text-white/25 mb-6">
+                <p className="text-[10px] text-white/25 mb-6 text-center md:text-left">
                   Prices shown in {currencyName}. Charged in USD at checkout.
                 </p>
               )}
               {currencyName === "USD" && <div className="mb-6" />}
 
               {/* Description */}
-              <p className="text-sm text-white/50 leading-relaxed mb-6">
+              <p className="text-sm text-white/50 leading-relaxed mb-6 text-center md:text-left">
                 {product.description}
               </p>
 
@@ -170,7 +170,7 @@ export function ProductPageClient() {
               </div>
 
               {/* Quantity + Add to Cart */}
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
                 <div className="flex items-center rounded-full border border-white/10">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -309,8 +309,8 @@ export function ProductPageClient() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {product.features.map((feature, i) => (
                 <ScrollReveal key={i} delay={i * 0.1}>
-                  <GlassmorphismCard className="p-6 h-full">
-                    <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-4">
+                  <GlassmorphismCard className="p-6 h-full text-center md:text-left">
+                    <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center mb-4 mx-auto md:mx-0">
                       <span className="text-gold text-sm font-bold">
                         {String(i + 1).padStart(2, "0")}
                       </span>
