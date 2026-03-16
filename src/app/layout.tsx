@@ -52,10 +52,8 @@ export default function RootLayout({
           <img height="1" width="1" style={{ display: "none" }} src="https://www.facebook.com/tr?id=957145853508671&ev=PageView&noscript=1" />
         </noscript>
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-[#0a0a0f] text-white overflow-x-hidden`}>
-        <div className="w-full overflow-x-hidden">
-          <ClientLayout>{children}</ClientLayout>
-        </div>
+      <body className={`${inter.variable} font-sans antialiased bg-[#0a0a0f] text-white`}>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

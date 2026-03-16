@@ -71,7 +71,7 @@ export function ProductPageClient() {
         {/* Product Section */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left - Image Gallery */}
-          <ScrollReveal direction="left">
+          <ScrollReveal direction="left" className="min-w-0">
             <div className="sticky top-28">
               {/* Main Image */}
               <div className="relative aspect-square rounded-2xl bg-gradient-to-b from-midnight-navy/40 to-space-black/60 border border-white/[0.06] overflow-hidden">
@@ -120,7 +120,7 @@ export function ProductPageClient() {
           </ScrollReveal>
 
           {/* Right - Info */}
-          <div>
+          <div className="min-w-0">
             <ScrollReveal direction="right">
               <p className="text-xs tracking-[0.3em] uppercase text-gold/60 mb-2">
                 {product.category}
