@@ -16,7 +16,7 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
       <ScrollProgress />
       <ParticleField />
 
-      <div className="relative z-10 w-full overflow-x-hidden">
+      <div className="relative z-10">
         <AnnouncementBar />
         <Header />
         <main>{children}</main>

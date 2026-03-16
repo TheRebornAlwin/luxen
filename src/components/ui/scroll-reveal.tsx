@@ -21,8 +21,8 @@ export function ScrollReveal({
   const directionMap = {
     up: { y: 40, x: 0 },
     down: { y: -40, x: 0 },
-    left: { y: 0, x: 40 },
-    right: { y: 0, x: -40 },
+    left: { y: 20, x: 0 },
+    right: { y: 20, x: 0 },
   };
 
   const offset = directionMap[direction];
