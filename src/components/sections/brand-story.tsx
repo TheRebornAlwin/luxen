@@ -8,7 +8,7 @@ import { TextGradient } from "@/components/ui/text-gradient";
 
 const stats = [
   { value: "50K+", label: "Happy Customers" },
-  { value: "12", label: "Colour Modes" },
+  { value: "12", label: "Color Modes" },
   { value: "4.9", label: "Average Rating" },
   { value: "30", label: "Day Guarantee" },
 ];
@@ -36,7 +36,7 @@ export function BrandStory() {
               </p>
               <p>
                 Our team of designers and engineers obsess over every detail,
-                from the colour accuracy of our nebula projections to the
+                from the color accuracy of our nebula projections to the
                 whisper-quiet motors that let you drift off under the stars
                 without a sound. This is not just a product. It is an
                 experience.

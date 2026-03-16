@@ -58,8 +58,8 @@ export default function PrivacyPolicyPage() {
               Cookies
             </h3>
             <p>
-              We use cookies to enhance your browsing experience, analyse site
-              traffic, and personalise content. You can control cookies through
+              We use cookies to enhance your browsing experience, analyze site
+              traffic, and personalize content. You can control cookies through
               your browser settings.
             </p>
 

@@ -31,7 +31,7 @@ export const heroProduct: Product = {
   ],
   features: [
     {
-      title: "12 Galaxy Colour Modes",
+      title: "12 Galaxy Color Modes",
       description:
         "Match the mood to the moment, from calm deep blue to vibrant aurora.",
     },
@@ -53,12 +53,12 @@ export const heroProduct: Product = {
     {
       title: "Remote Control Included",
       description:
-        "Change colours and brightness from your bed, couch, or anywhere in the room.",
+        "Change colors and brightness from your bed, couch, or anywhere in the room.",
     },
   ],
   specs: [
     "360° adjustable projection angle",
-    "12 galaxy colour modes",
+    "12 galaxy color modes",
     "Remote control included",
     "USB powered",
     "Timed shutdown function",
@@ -86,8 +86,8 @@ export const products: Product[] = [
         description: "Small enough to fit in your palm, powerful enough to fill a room.",
       },
       {
-        title: "8 Colour Modes",
-        description: "Eight carefully curated colour modes for every mood.",
+        title: "8 Color Modes",
+        description: "Eight carefully curated color modes for every mood.",
       },
       {
         title: "USB-C Powered",
@@ -95,7 +95,7 @@ export const products: Product[] = [
       },
     ],
     specs: [
-      "8 galaxy colour modes",
+      "8 galaxy color modes",
       "USB-C powered",
       "Compact & portable",
       "Auto-off timer",
@@ -142,7 +142,7 @@ export const products: Product[] = [
     images: ["/products/cosmos-ceiling-1.png"],
     features: [
       {
-        title: "Ceiling Optimised",
+        title: "Ceiling Optimized",
         description: "Engineered lens designed specifically for ceiling projection.",
       },
       {
@@ -151,9 +151,9 @@ export const products: Product[] = [
       },
     ],
     specs: [
-      "Ceiling-optimised lens",
+      "Ceiling-optimized lens",
       "Adjustable star density",
-      "16 colour modes",
+      "16 color modes",
       "Bluetooth speaker built-in",
       "Remote control included",
     ],

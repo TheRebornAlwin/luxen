@@ -18,7 +18,7 @@ const values = [
   {
     title: "Designed with Purpose",
     description:
-      "Every feature, every colour mode, every angle of projection has been thoughtfully designed to create a transformative experience.",
+      "Every feature, every color mode, every angle of projection has been thoughtfully designed to create a transformative experience.",
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
         <circle cx="12" cy="12" r="10" />
@@ -91,14 +91,14 @@ export default function AboutPage() {
               <p>
                 We found that the ambient lighting market was flooded with cheap,
                 poorly made products that broke within weeks and produced
-                underwhelming results. Colour accuracy was off, motors were loud,
+                underwhelming results. Color accuracy was off, motors were loud,
                 and the overall experience was far from what the marketing
                 promised.
               </p>
               <p>
                 So we decided to change that. We partnered with expert engineers
                 to develop projectors that are whisper quiet, produce stunning
-                colour-accurate projections, and are built to last. Our products
+                color-accurate projections, and are built to last. Our products
                 go through 12 quality checks before they reach your door.
               </p>
               <p>

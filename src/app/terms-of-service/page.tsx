@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
               We reserve the right to modify prices at any time. All prices are
               listed in US Dollars. We make every effort to display accurate
               product information, but we do not guarantee that descriptions,
-              colours, or other content is error-free.
+              colors, or other content is error-free.
             </p>
 
             <h3 className="text-white font-semibold text-base">
@@ -39,7 +39,7 @@ export default function TermsOfServicePage() {
             </h3>
             <p>
               By placing an order, you represent that the information you
-              provide is accurate and that you are authorised to use the payment
+              provide is accurate and that you are authorized to use the payment
               method provided. We reserve the right to cancel any order for any
               reason.
             </p>

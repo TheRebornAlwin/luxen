@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "James T.",
     location: "London, UK",
-    text: "Got it for my gaming setup and WOW. The colours are super rich, covers the whole ceiling too. Mates come over and they all want one now lol. 10/10 would buy again.",
+    text: "Got it for my gaming setup and WOW. The colors are super rich, covers the whole ceiling too. Mates come over and they all want one now lol. 10/10 would buy again.",
     rating: 5,
   },
   {

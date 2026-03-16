@@ -62,7 +62,7 @@ export default function FAQPage() {
         <ScrollReveal>
           <div className="text-center mb-12">
             <p className="text-xs tracking-[0.3em] uppercase text-gold/80 mb-4">
-              Help Centre
+              Help Center
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
               Frequently Asked Questions
