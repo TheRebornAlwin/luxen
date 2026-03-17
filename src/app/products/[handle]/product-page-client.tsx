@@ -122,9 +122,6 @@ export function ProductPageClient() {
           {/* Right - Info */}
           <div className="min-w-0">
             <ScrollReveal direction="right">
-              <p className="text-xs tracking-[0.3em] uppercase text-gold/60 mb-2 text-center md:text-left">
-                {product.category}
-              </p>
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-center md:text-left">
                 {product.title}
               </h1>
