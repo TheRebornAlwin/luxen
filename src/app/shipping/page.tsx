@@ -18,7 +18,7 @@ const shippingInfo = [
   {
     title: "Delivery Time",
     description:
-      "Due to high demand, orders may take between 2-4 weeks to arrive. We ship worldwide from our US warehouse.",
+      "Due to high demand, orders may take between 1-2 weeks to arrive. We ship worldwide from our US warehouse.",
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10" />

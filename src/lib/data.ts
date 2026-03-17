@@ -192,7 +192,7 @@ export const faqData = [
   },
   {
     question: "How long will it take to receive my order?",
-    answer: "Due to high demand, orders may take between 2-4 weeks to arrive.",
+    answer: "Due to high demand, orders may take between 1-2 weeks to arrive.",
   },
   {
     question: "What if I don't receive my order?",

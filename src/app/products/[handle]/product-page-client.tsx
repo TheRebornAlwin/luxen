@@ -242,7 +242,7 @@ export function ProductPageClient() {
                       content: (
                         <div className="space-y-3">
                           <p>
-                            Due to high demand, orders may take 2-4 weeks to arrive.
+                            Due to high demand, orders may take 1-2 weeks to arrive.
                             We ship worldwide with tracking included on every order.
                           </p>
                           <p>
