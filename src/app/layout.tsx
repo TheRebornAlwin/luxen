@@ -53,6 +53,18 @@ export default function RootLayout({
           <img height="1" width="1" style={{ display: "none" }} src="https://www.facebook.com/tr?id=957145853508671&ev=PageView&noscript=1" />
           <img height="1" width="1" style={{ display: "none" }} src="https://www.facebook.com/tr?id=2087319781813970&ev=PageView&noscript=1" />
         </noscript>
+        {/* Microsoft Clarity */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "w0hpfrta8a");
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-[#0a0a0f] text-white`}>
         <ClientLayout>{children}</ClientLayout>
